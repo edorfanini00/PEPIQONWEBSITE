@@ -2,7 +2,7 @@ import { ContactEmail, LegalPage, Section } from '../components/Legal'
 
 export default function Terms() {
   return (
-    <LegalPage title="Terms of Service" effectiveDate="July 11, 2026">
+    <LegalPage title="Terms of Service" effectiveDate="August 28, 2026">
       <section>
         <p>
           These Terms of Service (the &ldquo;Terms&rdquo;) govern your use of
@@ -27,6 +27,55 @@ export default function Terms() {
           your credentials confidential and for all activity under your
           account. Notify us immediately of any unauthorized use. We may
           suspend or terminate accounts that violate these Terms.
+        </p>
+      </Section>
+
+      <Section title="Subscriptions and payments">
+        <p className="mb-3">
+          Certain features are available only with IQON Premium, an
+          auto-renewable subscription sold through the Apple App Store. The
+          following terms apply:
+        </p>
+        <ul className="list-disc space-y-2 pl-6">
+          <li>
+            <strong className="font-medium text-ink">Title</strong> — IQON
+            Premium.
+          </li>
+          <li>
+            <strong className="font-medium text-ink">Length</strong> — offered
+            as a monthly (1 month) or annual (1 year) subscription. The
+            available durations are shown in the App before you purchase.
+          </li>
+          <li>
+            <strong className="font-medium text-ink">Price</strong> — the price
+            for each duration, in your local currency, is displayed in the App
+            on the subscription screen and on the App Store product page before
+            you confirm the purchase. Annual pricing is also shown so you can
+            compare it against the monthly rate.
+          </li>
+          <li>
+            <strong className="font-medium text-ink">Payment</strong> — payment
+            is charged to your Apple ID account at confirmation of purchase.
+          </li>
+          <li>
+            <strong className="font-medium text-ink">Auto-renewal</strong> —
+            the subscription renews automatically for the same duration at the
+            same price unless it is cancelled at least 24 hours before the end
+            of the current period. Your account is charged for renewal within
+            24 hours prior to the end of the current period.
+          </li>
+          <li>
+            <strong className="font-medium text-ink">Managing and
+            cancelling</strong> — you can manage your subscription and turn off
+            auto-renewal at any time in your Apple ID account settings. Once
+            purchased, the current period is non-refundable and cancellation
+            takes effect at the end of it.
+          </li>
+        </ul>
+        <p className="mt-3">
+          Purchases are processed by Apple, not by us. Refunds are handled by
+          Apple under its own policies; we cannot issue refunds for App Store
+          transactions.
         </p>
       </Section>
 

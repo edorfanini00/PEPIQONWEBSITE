@@ -2,7 +2,7 @@ import { ContactEmail, LegalPage, Section } from '../components/Legal'
 
 export default function Privacy() {
   return (
-    <LegalPage title="Privacy Policy" effectiveDate="July 11, 2026">
+    <LegalPage title="Privacy Policy" effectiveDate="August 28, 2026">
       <section>
         <p>
           This Privacy Policy describes how IQONIC (the &ldquo;App&rdquo;),
@@ -23,6 +23,13 @@ export default function Privacy() {
           <li>
             <strong className="font-medium text-ink">Profile information</strong>{' '}
             — any details you choose to add to your profile within the App.
+          </li>
+          <li>
+            <strong className="font-medium text-ink">Subscription status</strong>{' '}
+            — if you purchase IQON Premium, we receive a record of whether your
+            subscription is active from Apple and our subscription management
+            provider. We never receive or store your payment card details, which
+            are handled entirely by Apple.
           </li>
           <li>
             <strong className="font-medium text-ink">Device and usage data</strong>{' '}
