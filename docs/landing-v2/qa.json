@@ -1,0 +1,174 @@
+{
+  "desktop": {
+    "width": 1440,
+    "docWidth": 1440,
+    "fonts": [
+      {
+        "family": "Barlow Condensed",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "Barlow Condensed",
+        "weight": "700",
+        "status": "unloaded"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "400",
+        "status": "loaded"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "500",
+        "status": "loaded"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "700",
+        "status": "loaded"
+      }
+    ],
+    "broken": [],
+    "download": [
+      "https://apps.apple.com/us/app/iqonic/id6765689488",
+      "https://apps.apple.com/us/app/iqonic/id6765689488",
+      "https://apps.apple.com/us/app/iqonic/id6765689488"
+    ],
+    "totalHeight": 7762
+  },
+  "tabs": [
+    {
+      "name": "01\nVial inventory\n→",
+      "selected": "true",
+      "panel": "tab-vials"
+    },
+    {
+      "name": "02\nReconstitution\n→",
+      "selected": "true",
+      "panel": "tab-reconstitution"
+    },
+    {
+      "name": "03\nProtocols & cycles\n→",
+      "selected": "true",
+      "panel": "tab-protocols"
+    },
+    {
+      "name": "04\nSchedule & history\n→",
+      "selected": "true",
+      "panel": "tab-calendar"
+    },
+    {
+      "name": "05\nSpending\n→",
+      "selected": "true",
+      "panel": "tab-spending"
+    },
+    {
+      "name": "06\nCompound library\n→",
+      "selected": "true",
+      "panel": "tab-library"
+    }
+  ],
+  "keyboardTab": "tab-reconstitution",
+  "dialog": {
+    "open": true,
+    "active": "Close screenshot"
+  },
+  "dialogClosed": true,
+  "dailyCount": 8,
+  "researchCount": 8,
+  "allCount": 16,
+  "faqOpen": true,
+  "mobile": {
+    "width": 390,
+    "docWidth": 390,
+    "fonts": [
+      {
+        "family": "Barlow Condensed",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "Barlow Condensed",
+        "weight": "700",
+        "status": "unloaded"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "400",
+        "status": "loaded"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "500",
+        "status": "loaded"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "700",
+        "status": "loaded"
+      }
+    ],
+    "broken": [],
+    "download": [
+      "https://apps.apple.com/us/app/iqonic/id6765689488",
+      "https://apps.apple.com/us/app/iqonic/id6765689488",
+      "https://apps.apple.com/us/app/iqonic/id6765689488"
+    ],
+    "totalHeight": 9078
+  },
+  "small": {
+    "width": 320,
+    "docWidth": 320,
+    "fonts": [
+      {
+        "family": "Barlow Condensed",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "Barlow Condensed",
+        "weight": "700",
+        "status": "unloaded"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "400",
+        "status": "loaded"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "500",
+        "status": "loaded"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "600",
+        "status": "loaded"
+      },
+      {
+        "family": "DM Sans",
+        "weight": "700",
+        "status": "loaded"
+      }
+    ],
+    "broken": [],
+    "download": [
+      "https://apps.apple.com/us/app/iqonic/id6765689488",
+      "https://apps.apple.com/us/app/iqonic/id6765689488",
+      "https://apps.apple.com/us/app/iqonic/id6765689488"
+    ],
+    "totalHeight": 9753
+  },
+  "errors": []
+}

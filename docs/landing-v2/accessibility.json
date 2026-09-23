@@ -1,0 +1,19 @@
+{
+  "390": [],
+  "1440": [],
+  "support": {
+    "status": 200,
+    "title": "Support | IQONIC",
+    "h1": "How can we help?"
+  },
+  "privacy": {
+    "status": 200,
+    "title": "Privacy Policy | IQONIC",
+    "h1": "Privacy Policy"
+  },
+  "terms": {
+    "status": 200,
+    "title": "Terms of Service | IQONIC",
+    "h1": "Terms of Service"
+  }
+}

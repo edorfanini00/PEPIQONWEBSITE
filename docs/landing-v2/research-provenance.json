@@ -1,0 +1,122 @@
+{
+  "sourceCommit": "b99a5aeaef80dd8be2756f38f036c4c6f0f6729c",
+  "sourceTreeClean": true,
+  "rendering": "Real released React Native screen components rendered through Expo React Native Web and headless Chrome, not native-device screenshots.",
+  "syntheticFixtures": true,
+  "disclaimer": "OFFLINE DEMO \u00b7 SYNTHETIC LAB DATA \u00b7 NOT FOR HUMAN USE",
+  "networkPolicy": "Fresh browser context; requests allowed only to localhost/127.0.0.1; all other network destinations aborted. No production backend imported by screen routes.",
+  "blockedRequests": [],
+  "pageErrors": [],
+  "harnessChanges": [
+    "Root layout replaced by local screenshot shell; auth/payment/notifications initialization not mounted. No sign-in or production auth bypass.",
+    "Storage reads replaced with in-memory Sample A/B/C laboratory fixtures. Storage writes throw.",
+    "Calculator initial selected compound changed from BPC-157 to Sample A; synthetic math-only data record added to local copied dataset on calculator route. No JSX/styles of calculator changed.",
+    "Root contains explicit offline synthetic label. Web-only tab paddingBottom corrected from 26 to 8 to avoid RN-web clipping native inset.",
+    "Uncaptured Home/Lifestyle tabs redirect to local protocols placeholder; those screens owned by separate capture worker.",
+    "Library and Learn render unchanged release catalog/lesson data; progress starts empty in fresh local browser."
+  ],
+  "viewport": {
+    "width": 393,
+    "height": 900,
+    "deviceScaleFactor": 3
+  },
+  "captures": [
+    {
+      "file": "protocols.png",
+      "source": "app/(tabs)/protocols.tsx",
+      "sourceSha256": "f91396f962e2bbebf056f7084185eb112ee7f840b3d9ef229de2f153b6e54078",
+      "screenSourceByteIdentical": true,
+      "pngSha256": "fab505d483bb68acc3059ff19c5fe14cf74fd2e0f4433909c1d6b5736c33fda0",
+      "dimensions": [
+        1179,
+        2700
+      ],
+      "cropCSS": null,
+      "note": "Actual source view with offline fixture data where applicable."
+    },
+    {
+      "file": "vials.png",
+      "source": "app/(tabs)/protocols.tsx",
+      "sourceSha256": "f91396f962e2bbebf056f7084185eb112ee7f840b3d9ef229de2f153b6e54078",
+      "screenSourceByteIdentical": true,
+      "pngSha256": "5d23232d1a3571ff474e3d9823a20312015f1dae6eb1bb4cf7041e12f4011da6",
+      "dimensions": [
+        1179,
+        2700
+      ],
+      "cropCSS": null,
+      "note": "Actual source view with offline fixture data where applicable."
+    },
+    {
+      "file": "reconstitution.png",
+      "source": "app/(tabs)/calculator.tsx",
+      "sourceSha256": "e6cb2e36bfd759cb554f33e49d506c6a64720a5b3de5d538ca8c1a78420c18aa",
+      "screenSourceByteIdentical": false,
+      "pngSha256": "14805f57dec7500ae71e258a1ddf0a6a1bd3878f63f586481ae185a3775d4ea1",
+      "dimensions": [
+        1179,
+        1593
+      ],
+      "cropCSS": {
+        "x": 0,
+        "y": 0,
+        "width": 393,
+        "height": 531
+      },
+      "note": "Cropped above all dosage-tier cards; full view is private evidence only."
+    },
+    {
+      "file": "supply.png",
+      "source": "app/(tabs)/calculator.tsx",
+      "sourceSha256": "e6cb2e36bfd759cb554f33e49d506c6a64720a5b3de5d538ca8c1a78420c18aa",
+      "screenSourceByteIdentical": false,
+      "pngSha256": "7c16aeee0199a60db5df6e640cf788c04b4579bea209808af7d3408b949a55da",
+      "dimensions": [
+        1179,
+        2700
+      ],
+      "cropCSS": null,
+      "note": "Actual source view with offline fixture data where applicable."
+    },
+    {
+      "file": "calendar.png",
+      "source": "app/calendar.tsx",
+      "sourceSha256": "9206700e003cd19db104ee99f45b70a84d48560bcfc6dcc57c38a820031c4370",
+      "screenSourceByteIdentical": true,
+      "pngSha256": "82345409d3107e5c5257ff0a55eb6d8dffe2a6679300a1b1af27ad4b4adac6ca",
+      "dimensions": [
+        1179,
+        2700
+      ],
+      "cropCSS": null,
+      "note": "Actual source view with offline fixture data where applicable."
+    },
+    {
+      "file": "library.png",
+      "source": "app/(tabs)/library.tsx",
+      "sourceSha256": "339dfa07c3cd28d7aef5d44c5ad12bf09313d281033f60698d06c24cc54bbbf4",
+      "screenSourceByteIdentical": true,
+      "pngSha256": "4a1fb7b603b338aa5b264f12f3f6198bd656b9eade4500538f87afacb7c596b6",
+      "dimensions": [
+        1179,
+        2700
+      ],
+      "cropCSS": null,
+      "note": "Actual source view with offline fixture data where applicable."
+    },
+    {
+      "file": "learn.png",
+      "source": "app/learn.tsx",
+      "sourceSha256": "a23ffa1c021b3b4c954789452442aaf8d08a68057bd9a07bea65d7dd00fd6ed7",
+      "screenSourceByteIdentical": true,
+      "pngSha256": "84241f1b4368547adc1345404aac27595d78b2b7dc965611a24816325332e43d",
+      "dimensions": [
+        1179,
+        2700
+      ],
+      "cropCSS": null,
+      "note": "Actual source view with offline fixture data where applicable."
+    }
+  ],
+  "remainingOwnership": "today.png/spending.png assigned to parallel lifestyle worker; not captured or overwritten by research worker."
+}
