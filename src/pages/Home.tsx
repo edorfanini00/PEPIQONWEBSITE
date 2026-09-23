@@ -1,61 +1,63 @@
+import { Link } from 'react-router-dom'
+import DownloadLink from '../components/DownloadLink'
+import './Home.css'
+
+function Phone({ screen, label, className = '', priority = false }: { screen: string; label: string; className?: string; priority?: boolean }) {
+  return <div className={`product-phone product-${screen} ${className}`}><img src={`/screens/${screen}.png`} alt={label} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'auto'} width={978} height={screen === 'spending' ? 1022 : 1998} /></div>
+}
+
+const questions = [
+  { question: 'What is IQONIC?', answer: 'IQONIC brings daily overview, nutrition logging, sleep, weight, research protocol organization, and inventory and spending into one iPhone app. It gives the things you track a shared home.' },
+  { question: 'Is IQONIC free to download?', answer: 'Yes. IQONIC is free to download on the App Store and offers in app subscriptions. You can review current plans, prices, and terms in the app before subscribing.' },
+  { question: 'Does it connect with Apple Health?', answer: 'Yes. IQONIC supports Apple Health integration. You choose which supported health data to share and can manage access in your iPhone settings.' },
+  { question: 'What are the research tools for?', answer: 'The research tools help organize protocols, inventory, and spending for informational and research purposes. They do not provide medical advice, diagnosis, treatment, or instructions for human use.' },
+  { question: 'Where can I get help?', answer: <>Visit our <Link to="/support">support page</Link> or email <a href="mailto:info@iqonhealth.com">info@iqonhealth.com</a>. You can also read our <Link to="/privacy">privacy policy</Link> and <Link to="/terms">terms of service</Link>.</> },
+]
+
 export default function Home() {
   return (
-    <section className="relative flex min-h-[calc(100vh-140px)] items-center overflow-hidden">
-      {/* Pastel gradient blobs */}
-      <div className="blob blob-blue left-[-8%] top-[5%] h-[26rem] w-[26rem]" aria-hidden="true" />
-      <div className="blob blob-purple right-[-6%] top-[30%] h-[22rem] w-[22rem]" aria-hidden="true" />
-      <div className="blob blob-pink bottom-[-15%] left-[30%] h-[24rem] w-[24rem]" aria-hidden="true" />
-
-      <div className="relative mx-auto w-full max-w-[1280px] px-6 py-20 text-center">
-        <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-[22px] bg-ink shadow-[0_12px_40px_rgba(18,32,28,0.18)]">
-          <svg width="44" height="44" viewBox="0 0 32 32" aria-hidden="true">
-            <circle cx="12" cy="16" r="5" fill="none" stroke="#D4FF9E" strokeWidth="2.5" />
-            <circle cx="21" cy="16" r="5" fill="none" stroke="#D4FF9E" strokeWidth="2.5" opacity="0.55" />
-          </svg>
+    <div className="iqonic-home">
+      <section className="home-hero" aria-labelledby="hero-title">
+        <div className="hero-copy">
+          <p className="section-label">A clearer view of your every day</p>
+          <h1 id="hero-title">Your daily picture.<br /><span>Beautifully connected.</span></h1>
+          <p className="hero-description">Nutrition, sleep, weight, and research.<br className="desktop-break" /> Together in one thoughtfully designed iPhone app.</p>
+          <DownloadLink />
+          <p className="download-note">Free to download. In app subscriptions available.</p>
         </div>
-
-        <p className="eyebrow mb-5">Operated by IQON Health</p>
-
-        <h1 className="mx-auto max-w-2xl text-4xl leading-[1.1] text-ink md:text-6xl">
-          IQONIC
-        </h1>
-
-        <p className="mx-auto mt-5 max-w-md text-lg leading-relaxed text-sage">
-          Your health companion — simple tools and information, right in your
-          pocket.
-        </p>
-
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a href="#" className="btn-pill hover-lift" aria-label="Download on the App Store">
-            <AppleIcon />
-            App Store
-          </a>
-          <a href="#" className="btn-pill hover-lift" aria-label="Get it on Google Play">
-            <PlayIcon />
-            Google Play
-          </a>
+        <div className="hero-stage" aria-label="A look inside IQONIC">
+          <div className="stage-word" aria-hidden="true">IQONIC</div>
+          <Phone screen="nutrition" label="IQONIC Lifestyle preview published on the App Store" className="hero-phone hero-phone-center" priority />
+          <Phone screen="spending" label="IQONIC Spending preview published on the App Store" className="hero-phone hero-phone-right" priority />
         </div>
+        <div className="hero-caption"><span>App Store previews. Screens shown for illustration.</span><a href="#overview">Meet IQONIC <span aria-hidden="true">↓</span></a></div>
+      </section>
 
-        <p className="mt-8 text-sm text-sage">
-          Coming soon to iOS and Android
-        </p>
-      </div>
-    </section>
-  )
-}
+      <section className="overview-section section-shell" id="overview" aria-labelledby="overview-title">
+        <div className="section-heading"><p className="section-label">Your daily lifestyle</p><h2 id="overview-title">Your day.<br /><span>At a glance.</span></h2></div>
+        <div className="overview-composition">
+          <div className="overview-art"><div className="orbit orbit-one" aria-hidden="true" /><div className="orbit orbit-two" aria-hidden="true" /><Phone screen="nutrition" label="IQONIC Lifestyle preview published on the App Store" /><span className="art-caption">One place to come back to.</span></div>
+          <div className="overview-copy"><h3>A little perspective.<br />A lot less switching.</h3><p>See nutrition, water, and weight in your lifestyle view. Connect Apple Health to bring steps, calories, and sleep into IQONIC.</p><div className="feature-lines"><div><span>01</span><p><strong>The essentials, together.</strong> Track protein, calories, and water alongside your weight records.</p></div><div><span>02</span><p><strong>Room for the details.</strong> Explore weight trends and weekly sleep charts.</p></div><div><span>03</span><p><strong>Made for your iPhone.</strong> A considered interface with Apple Health integration.</p></div></div></div>
+        </div>
+      </section>
 
-function AppleIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-    </svg>
-  )
-}
+      <section className="research-section" id="research" aria-labelledby="research-title">
+        <div className="research-inner section-shell">
+          <div className="research-copy"><p className="section-label">A place for your research</p><h2 id="research-title">Organized.<br />Down to<br /><span>the details.</span></h2><p>Keep research protocols, inventory, and spending in one place. More structure for your records. More clarity about what you have.</p><div className="research-topics"><span>Protocol organization</span><span>Inventory tracking</span><span>Spending overview</span></div><p className="research-disclaimer">For research and informational purposes only.<br />Not medical advice or instructions for human use.</p></div>
+          <div className="research-art"><span className="research-art-label">A clearer view of spending</span><Phone screen="spending" label="IQONIC spending and inventory organization" /><span className="research-art-bottom">Every detail has its place.</span></div>
+        </div>
+      </section>
 
-function PlayIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M3.61 1.81 13.79 12 3.61 22.19c-.37-.19-.61-.57-.61-1.02V2.83c0-.45.24-.83.61-1.02zM14.85 13.06l2.56 2.56-11.6 6.44 9.04-9zM17.41 8.38l-2.56 2.56-9.04-9 11.6 6.44zM18.78 9.14l2.61 1.45c.81.45.81 1.37 0 1.82l-2.61 1.45L15.91 12l2.87-2.86z" />
-    </svg>
+      <section className="nutrition-section section-shell" id="nutrition" aria-labelledby="nutrition-title">
+        <div className="nutrition-heading"><p className="section-label">The everyday details</p><h2 id="nutrition-title">Small moments.<br /><span>A fuller picture.</span></h2><p>What you eat. How you sleep. Where your weight is heading. Give your daily records a place to live.</p></div>
+        <div className="nutrition-composition"><div className="nutrition-art"><div className="nutrition-art-copy"><span className="section-label">Nutrition</span><h3>Scan a meal.<br />Log your food.</h3></div><Phone screen="nutrition" label="IQONIC Lifestyle preview published on the App Store" /></div><div className="daily-details"><article><span className="detail-marker" aria-hidden="true">↗</span><h3>Food, logged.</h3><p>Use AI meal scanning, barcode lookup, or manual logging to build your food diary.</p></article><article><span className="detail-marker" aria-hidden="true">◐</span><h3>Rest, recorded.</h3><p>Explore weekly sleep charts alongside the rest of your daily tracking.</p></article><article><span className="detail-marker" aria-hidden="true">↔</span><h3>Weight, in view.</h3><p>Follow your weight trends over time, not just a number in the moment.</p></article></div></div>
+      </section>
+
+      <section className="health-section" aria-labelledby="health-title"><div className="section-shell health-inner"><div className="health-symbol" aria-hidden="true">♥</div><div><p className="section-label">Works with Apple Health</p><h2 id="health-title">Connected by you.<br /><span>For your daily view.</span></h2></div><div className="health-copy"><p>Bring supported Apple Health data into IQONIC. You choose what to share, with access managed in your iPhone settings.</p><Link to="/privacy" className="text-link">Read our privacy policy <span aria-hidden="true">↗</span></Link></div></div></section>
+
+      <section className="faq-section section-shell" id="questions" aria-labelledby="faq-title"><div><p className="section-label">A few things to know</p><h2 id="faq-title">Good questions.<br /><span>Clear answers.</span></h2><Link to="/support" className="text-link">Visit support <span aria-hidden="true">↗</span></Link></div><div className="faq-list">{questions.map(({ question, answer }) => <details key={question}><summary>{question}<span className="faq-toggle" aria-hidden="true" /></summary><div className="faq-answer">{answer}</div></details>)}</div></section>
+
+      <section className="closing-section" aria-labelledby="closing-title"><p className="section-label">This is your daily picture</p><h2 id="closing-title">Make it<br /><span>come together.</span></h2><p>Meet your new everyday app.</p><DownloadLink /><p className="download-note">Available for iPhone. Free to download.<br />In app subscriptions available.</p></section>
+    </div>
   )
 }

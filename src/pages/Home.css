@@ -1,0 +1,154 @@
+.iqonic-home { --home-ink: #202322; --home-muted: #696e66; --home-paper: #fafaf8; color: var(--home-ink); background: var(--home-paper); }
+.iqonic-home h1,.iqonic-home h2,.iqonic-home h3,.iqonic-home p { margin: 0; }
+.iqonic-home h1,.iqonic-home h2,.iqonic-home h3 { font-weight: 600; letter-spacing: -.055em; text-wrap: balance; }
+.iqonic-home h2 { font-size: clamp(44px,5.2vw,76px); line-height: 1.04; }
+.iqonic-home h2 span { color: var(--home-muted); }
+.iqonic-home .section-label { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 23px; }
+.iqonic-home .section-shell { width: min(1160px,calc(100% - 112px)); margin-inline: auto; }
+.iqonic-home section[id] { scroll-margin-top: 96px; }
+.iqonic-home .home-hero { padding-top: 82px; overflow: hidden; }
+.iqonic-home .hero-copy { text-align: center; padding-inline: 22px; position: relative; z-index: 2; }
+.iqonic-home h1 { font-size: clamp(48px,6.65vw,100px); line-height: 1.015; letter-spacing: -.065em; }
+.iqonic-home h1 span { color: #838780; }
+.iqonic-home .hero-description { font-size: 20px; line-height: 1.5; color: #666b65; margin: 27px auto 25px; }
+.iqonic-home .download-note { font-size: 12px; line-height: 1.6; color: #696e66; margin-top: 13px; }
+.iqonic-home .hero-stage { position: relative; width: min(1200px,100%); height: 620px; margin: 48px auto 0; }
+.iqonic-home .stage-word { position: absolute; inset: 95px 0 auto; text-align: center; color: #e9ece4; font-weight: 650; font-size: clamp(110px,22vw,315px); line-height: 1; letter-spacing: -.065em; user-select: none; }
+.iqonic-home .product-phone { position: relative; width: 270px; padding: 0; background: #252724; border: 0; border-radius: 38px; overflow: hidden; box-shadow: 0 24px 44px -20px #1824185e; flex-shrink: 0; }
+.iqonic-home .product-phone img { display: block; width: 100%; height: auto; border-radius: 0; background: #f7f8f5; }
+.iqonic-home .hero-phone { position: absolute; left: 50%; top: 0; width: 280px; }
+.iqonic-home .hero-phone-center { z-index: 3; transform: translateX(calc(-50% - 90px)) rotate(-5deg); width: 286px; }
+.iqonic-home .hero-phone-left { z-index: 2; transform: translateX(calc(-50% - 252px)) rotate(-9deg); top: 64px; }
+.iqonic-home .hero-phone-right { z-index: 1; transform: translateX(calc(-50% + 200px)) rotate(7deg); top: 160px; width: 310px; border-radius: 36px 36px 18px 18px; }
+.iqonic-home .hero-caption { position: relative; z-index: 4; max-width: 1160px; margin: 0 auto; padding: 25px 0 34px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: #696e66; }
+.iqonic-home .hero-caption a { display: flex; align-items: center; gap: 18px; color: #292f27; min-height: 44px; }
+.iqonic-home .overview-section { padding-block: 120px 130px; }
+.iqonic-home .section-heading { margin-bottom: 58px; }
+.iqonic-home .overview-composition { display: grid; grid-template-columns: 1.1fr 1fr; gap: 95px; align-items: center; }
+.iqonic-home .overview-art { min-height: 655px; background: #ecede6; border-radius: 28px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden; }
+.iqonic-home .overview-art .product-phone { transform: rotate(-6deg); width: 250px; z-index: 1; }
+.iqonic-home .orbit { width: 580px; height: 580px; border: 1px solid #d8dbce; border-radius: 50%; position: absolute; }
+.iqonic-home .orbit-two { width: 400px; height: 400px; }
+.iqonic-home .art-caption { position: absolute; bottom: 23px; font-size: 12px; color: #60685a; }
+.iqonic-home .overview-copy h3 { font-size: 36px; line-height: 1.13; margin-bottom: 23px; }
+.iqonic-home .overview-copy > p { font-size: 18px; line-height: 1.6; color: #696e66; max-width: 370px; }
+.iqonic-home .feature-lines { margin-top: 34px; }
+.iqonic-home .feature-lines > div { display: flex; gap: 21px; padding: 24px 0; border-top: 1px solid #dddeda; }
+.iqonic-home .feature-lines > div > span { color: #696e66; font-size: 12px; padding-top: 3px; }
+.iqonic-home .feature-lines p { color: #696e66; font-size: 15px; line-height: 1.6; }
+.iqonic-home .feature-lines strong { color: #292e28; font-weight: 550; }
+.iqonic-home .research-section { background: #202720; color: #f2f5eb; overflow: hidden; }
+.iqonic-home .research-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 85px; min-height: 820px; align-items: center; padding-block: 90px; }
+.iqonic-home .research-copy .section-label { color: #b9c4a9; }
+.iqonic-home .research-copy h2 { font-size: clamp(58px,6.7vw,92px); }
+.iqonic-home .research-copy h2 span { color: #b7c3a8; }
+.iqonic-home .research-copy > p:not(.section-label):not(.research-disclaimer) { color: #b4bdb0; font-size: 18px; line-height: 1.65; max-width: 385px; margin-top: 32px; }
+.iqonic-home .research-topics { margin: 31px 0; display: flex; flex-wrap: wrap; gap: 8px; max-width: 360px; }
+.iqonic-home .research-topics span { border: 1px solid #515c4a; border-radius: 30px; padding: 8px 13px; font-size: 12px; color: #d1d7ca; }
+.iqonic-home .research-disclaimer { font-size: 11px; line-height: 1.7; color: #a7b0a1; }
+.iqonic-home .research-art { position: relative; display: flex; justify-content: center; align-items: center; min-height: 650px; background: radial-gradient(ellipse at center,#404c36 0%,transparent 66%); }
+.iqonic-home .research-art .product-phone { width: min(420px, 100%); transform: rotate(5deg); box-shadow: 0 0 0 2px #64695d,0 35px 60px #0007; }
+.iqonic-home .research-art-label { position: absolute; top: -10px; right: 0; color: #b1bba6; font-size: 12px; }
+.iqonic-home .research-art-bottom { position: absolute; bottom: -27px; color: #aab79e; font-size: 12px; letter-spacing: .02em; }
+.iqonic-home .nutrition-section { padding-block: 126px; }
+.iqonic-home .nutrition-heading { position: relative; margin-bottom: 60px; }
+.iqonic-home .nutrition-heading > p:last-child { max-width: 310px; position: absolute; right: 0; bottom: 5px; font-size: 18px; color: #696e66; line-height: 1.6; }
+.iqonic-home .nutrition-composition { display: grid; grid-template-columns: 1.6fr 1fr; gap: 70px; align-items: center; }
+.iqonic-home .nutrition-art { background: #eeece6; border-radius: 28px; height: 710px; overflow: hidden; position: relative; padding: 40px; }
+.iqonic-home .nutrition-art h3 { font-size: 35px; line-height: 1.08; }
+.iqonic-home .nutrition-art .section-label { font-size: 11px; color: #696e66; margin-bottom: 16px; display: block; }
+.iqonic-home .nutrition-art .product-phone { width: 285px; position: absolute; right: 52px; top: 188px; transform: rotate(9deg); }
+.iqonic-home .daily-details article { padding-block: 26px 31px; border-bottom: 1px solid #dddeda; }
+.iqonic-home .daily-details article:last-child { border-bottom: 0; }
+.iqonic-home .detail-marker { display: block; color: #717e60; font-size: 30px; margin-bottom: 12px; line-height: 1; }
+.iqonic-home .daily-details h3 { font-size: 30px; margin-bottom: 10px; letter-spacing: -.035em; }
+.iqonic-home .daily-details p { color: #696e66; font-size: 16px; line-height: 1.65; max-width: 280px; }
+.iqonic-home .health-section { background: #eeefe9; padding-block: 75px; }
+.iqonic-home .health-inner { display: grid; grid-template-columns: 75px 1.4fr 1fr; align-items: center; gap: 30px; }
+.iqonic-home .health-symbol { width: 68px; height: 68px; border-radius: 18px; background: #fff; display: grid; place-items: center; color: #d95764; font-size: 38px; box-shadow: 0 6px 15px #26322009; }
+.iqonic-home .health-inner h2 { font-size: 38px; letter-spacing: -.04em; }
+.iqonic-home .health-inner .section-label { font-size: 10px; margin-bottom: 16px; }
+.iqonic-home .health-copy p { font-size: 15px; color: #6c7366; line-height: 1.7; }
+.iqonic-home .text-link { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; min-height: 44px; margin-top: 15px; }
+.iqonic-home .text-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+.iqonic-home .faq-section { padding-block: 130px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 95px; }
+.iqonic-home .faq-section h2 { font-size: 46px; }
+.iqonic-home .faq-list details { border-bottom: 1px solid #dcded7; }
+.iqonic-home .faq-list details:first-child { border-top: 1px solid #dcded7; }
+.iqonic-home .faq-list summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 25px 0; font-size: 16px; font-weight: 550; }
+.iqonic-home .faq-list summary::-webkit-details-marker { display: none; }
+.iqonic-home .faq-toggle { width: 15px; height: 15px; position: relative; flex: 0 0 15px; }
+.iqonic-home .faq-toggle::before,.iqonic-home .faq-toggle::after { content: ''; background: #69745d; width: 13px; height: 1px; position: absolute; top: 7px; left: 1px; }
+.iqonic-home .faq-toggle::after { transform: rotate(90deg); transition: transform .2s; }
+.iqonic-home details[open] .faq-toggle::after { transform: rotate(0); }
+.iqonic-home .faq-answer { padding: 0 28px 26px 0; font-size: 15px; color: #6a7165; line-height: 1.75; }
+.iqonic-home .faq-answer a { text-decoration: underline; text-underline-offset: 3px; }
+.iqonic-home .closing-section { text-align: center; padding: 106px 24px 110px; background: #e8ebdf; }
+.iqonic-home .closing-section h2 { font-size: clamp(56px,7.5vw,108px); line-height: 1; }
+.iqonic-home .closing-section h2 span { color: #7c856f; }
+.iqonic-home .closing-section > p:not(.section-label):not(.download-note) { margin: 25px 0; font-size: 19px; color: #656e5d; }
+@media (min-width: 1600px) { .iqonic-home .home-hero { padding-top: 100px; } }
+@media (max-width: 1050px) {
+ .iqonic-home .section-shell { width: calc(100% - 64px); }
+ .iqonic-home .hero-caption { margin-inline: 32px; }
+ .iqonic-home .overview-composition { gap: 45px; }
+ .iqonic-home .nutrition-heading > p:last-child { position: static; margin-top: 25px; max-width: 450px; }
+ .iqonic-home .nutrition-composition { gap: 45px; grid-template-columns: 1.3fr 1fr; }
+ .iqonic-home .nutrition-art .product-phone { right: 35px; }
+ .iqonic-home .health-inner { grid-template-columns: 70px 1fr; }
+ .iqonic-home .health-copy { grid-column: 2; max-width: 500px; }
+ .iqonic-home .faq-section { gap: 45px; }
+ .iqonic-home .research-inner { gap: 35px; }
+}
+@media (max-width: 700px) {
+ .iqonic-home .section-shell { width: calc(100% - 40px); }
+ .iqonic-home .home-hero { padding-top: 39px; }
+ .iqonic-home h1 { font-size: clamp(39px,8.6vw,60px); letter-spacing: -.06em; }
+ .iqonic-home .section-label { font-size: 10px; margin-bottom: 19px; }
+ .iqonic-home .hero-description { font-size: 16px; margin: 22px auto 23px; max-width: 330px; }
+ .iqonic-home .desktop-break { display: none; }
+ .iqonic-home .hero-stage { margin-top: 38px; height: 440px; }
+ .iqonic-home .hero-phone-center { width: 205px; transform: translateX(calc(-50% - 43px)) rotate(-5deg); }
+ .iqonic-home .hero-phone-left,.iqonic-home .hero-phone-right { width: 196px; top: 49px; }
+ .iqonic-home .hero-phone-left { transform: translateX(calc(-50% - 167px)) rotate(-10deg); }
+ .iqonic-home .hero-phone-right { transform: translateX(calc(-50% + 123px)) rotate(7deg); top: 125px; width: 185px; }
+ .iqonic-home .stage-word { top: 130px; }
+ .iqonic-home .product-phone { border-radius: 29px; padding: 0; }
+ .iqonic-home .product-phone img { border-radius: 0; }
+ .iqonic-home .hero-caption { margin-inline: 20px; padding: 18px 0; font-size: 10px; gap: 12px; }
+ .iqonic-home .hero-caption a { gap: 9px; }
+ .iqonic-home .overview-section,.iqonic-home .nutrition-section { padding-block: 76px; }
+ .iqonic-home .section-heading { margin-bottom: 34px; }
+ .iqonic-home .overview-composition,.iqonic-home .nutrition-composition,.iqonic-home .faq-section { grid-template-columns: 1fr; gap: 35px; }
+ .iqonic-home .overview-art { min-height: 615px; }
+ .iqonic-home .overview-art .product-phone { width: 235px; }
+ .iqonic-home .overview-copy { padding: 10px 5px 0; }
+ .iqonic-home .overview-copy h3 { font-size: 32px; }
+ .iqonic-home .overview-copy > p { font-size: 16px; }
+ .iqonic-home .feature-lines { margin-top: 25px; }
+ .iqonic-home .research-inner { grid-template-columns: 1fr; padding-block: 72px 75px; gap: 60px; }
+ .iqonic-home .research-copy h2 { font-size: 64px; }
+ .iqonic-home .research-copy > p:not(.section-label):not(.research-disclaimer) { font-size: 16px; }
+ .iqonic-home .research-art { min-height: 390px; }
+ .iqonic-home .research-art .product-phone { width: min(320px, 92%); }
+ .iqonic-home .research-art-label { right: 15px; }
+ .iqonic-home .nutrition-heading { margin-bottom: 32px; }
+ .iqonic-home .nutrition-heading > p:last-child { font-size: 16px; }
+ .iqonic-home .nutrition-art { height: 650px; padding: 30px; }
+ .iqonic-home .nutrition-art .product-phone { width: 260px; right: 30px; top: 185px; }
+ .iqonic-home .daily-details { padding-inline: 5px; }
+ .iqonic-home .daily-details article { position: relative; padding-left: 50px; }
+ .iqonic-home .detail-marker { position: absolute; left: 0; top: 31px; }
+ .iqonic-home .daily-details h3 { font-size: 27px; }
+ .iqonic-home .health-section { padding-block: 58px; }
+ .iqonic-home .health-inner { grid-template-columns: 1fr; gap: 24px; }
+ .iqonic-home .health-copy { grid-column: 1; }
+ .iqonic-home .health-inner h2 { font-size: 35px; }
+ .iqonic-home .health-symbol { width: 58px; height: 58px; border-radius: 15px; font-size: 32px; }
+ .iqonic-home .faq-section { padding-block: 76px; gap: 35px; }
+ .iqonic-home .faq-section h2 { font-size: 41px; }
+ .iqonic-home .faq-list summary { font-size: 15px; }
+ .iqonic-home .closing-section { padding-block: 77px; }
+ .iqonic-home .closing-section h2 { font-size: clamp(50px,12vw,75px); }
+}
+@media (prefers-reduced-motion: reduce) { .iqonic-home *, .iqonic-home *::after { transition: none; } }

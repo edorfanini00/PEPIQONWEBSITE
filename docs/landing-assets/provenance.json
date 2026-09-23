@@ -1,0 +1,103 @@
+{
+  "created_at": "2026-09-23T17:57:41.637062+00:00",
+  "app": {
+    "id": 6765689488,
+    "name": "IQONIC",
+    "seller": "Prismtrade LLC"
+  },
+  "method": "Rectangular cropping only, JPEG decode and PNG encode. No retouching, reconstruction, perspective correction, data injection, or UI changes.",
+  "assets": [
+    {
+      "file": "overview.png",
+      "type": "published-promotional-screen-crop",
+      "label": "Published App Store promotional screen crop \u2014 not a new running-app capture",
+      "source_file": "/Users/edorfanini/.hermes/workspace/iqonic-landing/store-1.jpg",
+      "source_sha256": "2ddfdc14f07a47de2357ed7e75cfa5d13172db933dcf91b146e88aec3fd1d755",
+      "listing_asset_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/91/b1/31/91b131d5-7688-4fae-c678-079271faee34/image1.png/320x480bb.jpg",
+      "downloaded_rendition_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/91/b1/31/91b131d5-7688-4fae-c678-079271faee34/image1.png/1290x2796bb.jpg",
+      "source_dimensions": [
+        1284,
+        2778
+      ],
+      "crop_xyxy": [
+        80,
+        1040,
+        1284,
+        2778
+      ],
+      "output_dimensions": [
+        1204,
+        1738
+      ],
+      "output_sha256": "b9eb22884ca343a32a5ea682a050222ad98b2715674c92d2487f0a5b561b2a5b"
+    },
+    {
+      "file": "nutrition.png",
+      "type": "published-promotional-screen-crop",
+      "label": "Published App Store promotional screen crop \u2014 not a new running-app capture",
+      "source_file": "/Users/edorfanini/.hermes/workspace/iqonic-landing/store-5.jpg",
+      "source_sha256": "d6a898ba786cea620b8163358ea508129b3199ff8728e58415795c4eba7d238d",
+      "listing_asset_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6b/35/7f/6b357f88-f8b2-4d9d-c309-1be034ee486a/image5.png/320x480bb.jpg",
+      "downloaded_rendition_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6b/35/7f/6b357f88-f8b2-4d9d-c309-1be034ee486a/image5.png/1290x2796bb.jpg",
+      "source_dimensions": [
+        1284,
+        2778
+      ],
+      "crop_xyxy": [
+        152,
+        780,
+        1130,
+        2778
+      ],
+      "output_dimensions": [
+        978,
+        1998
+      ],
+      "output_sha256": "ccd6db4603c3081875319f29502602ba0225ce59c6ea1b70a7d9c4364278df87"
+    },
+    {
+      "file": "spending.png",
+      "type": "published-promotional-screen-crop",
+      "label": "Published App Store promotional screen crop \u2014 not a new running-app capture",
+      "source_file": "/Users/edorfanini/.hermes/workspace/iqonic-landing/store-3.jpg",
+      "source_sha256": "41c3e1b4ce104e7dbaa0275f68fbb7fb8f7406eaf54b2c5ae854e24b7993051e",
+      "listing_asset_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/b8/f0/6cb8f0b6-1474-f710-5b20-4c45c2df9fa1/image3.png/320x480bb.jpg",
+      "downloaded_rendition_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6c/b8/f0/6cb8f0b6-1474-f710-5b20-4c45c2df9fa1/image3.png/1290x2796bb.jpg",
+      "source_dimensions": [
+        1284,
+        2778
+      ],
+      "crop_xyxy": [
+        152,
+        1756,
+        1130,
+        2778
+      ],
+      "output_dimensions": [
+        978,
+        1022
+      ],
+      "output_sha256": "bb1da1c3156aca9d3b64433d74d4d380055a90fb5e62c4a3e530621dcdebfe34"
+    }
+  ],
+  "running_app_attempt": {
+    "repository": "/Users/edorfanini/Projects/iqon-app-scan-release/mobile",
+    "commit": "b99a5aeaef80dd8be2756f38f036c4c6f0f6729c",
+    "command": "CI=1 ./node_modules/.bin/expo start --web --port 8193",
+    "actual_url": "http://localhost:8193/sign-in",
+    "browser": "Isolated headless Google Chrome via Playwright; viewport 393x852; device scale factor 2",
+    "page_errors": [],
+    "screenshot_evidence": "/Users/edorfanini/.hermes/workspace/iqonic-landing/expo-web-actual.png",
+    "result": "App renders real sign-in screen. Authenticated overview, lifestyle, spending unavailable without login. Stopped without signing in or bypassing auth.",
+    "source_changes": "None; clean release git status confirmed after starting Expo. Dirty original tree untouched. iPhone 18 Pro simulator untouched."
+  },
+  "limitations": [
+    "These three landing assets are fallback crops from published promotional images, NOT newly captured running-app screens.",
+    "Overview remains angled as in source and bottom content was already clipped by promotional framing.",
+    "nutrition.png depicts Lifestyle overview with Nutrition link, protein, calories, water and weight; it is not the detailed nutrition logging screen.",
+    "Spending image contains only the upper spending summary; lower cards are clipped by original promotional framing.",
+    "Displayed values are publisher-provided promotional content, not a newly populated account or verified live user data.",
+    "Public listing version does not establish screenshot build or date.",
+    "Use a visible published-preview label on the landing page; provenance JSON alone is not a user-facing label."
+  ]
+}
