@@ -1,61 +1,79 @@
-export default function Home() {
-  return (
-    <section className="relative flex min-h-[calc(100vh-140px)] items-center overflow-hidden">
-      {/* Pastel gradient blobs */}
-      <div className="blob blob-blue left-[-8%] top-[5%] h-[26rem] w-[26rem]" aria-hidden="true" />
-      <div className="blob blob-purple right-[-6%] top-[30%] h-[22rem] w-[22rem]" aria-hidden="true" />
-      <div className="blob blob-pink bottom-[-15%] left-[30%] h-[24rem] w-[24rem]" aria-hidden="true" />
+import { useState, useRef, useEffect } from "react";
+import { ArrowDown, ArrowUpRight, Check, Plus, CalendarDays, Calculator, Utensils, Heart, Activity, Droplets, ScanLine, BarChart3, History, ArrowRight, Star } from "lucide-react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/tabs";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../components/ui/accordion";
 
-      <div className="relative mx-auto w-full max-w-[1280px] px-6 py-20 text-center">
-        <div className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-[22px] bg-ink shadow-[0_12px_40px_rgba(18,32,28,0.18)]">
-          <svg width="44" height="44" viewBox="0 0 32 32" aria-hidden="true">
-            <circle cx="12" cy="16" r="5" fill="none" stroke="#D4FF9E" strokeWidth="2.5" />
-            <circle cx="21" cy="16" r="5" fill="none" stroke="#D4FF9E" strokeWidth="2.5" opacity="0.55" />
-          </svg>
-        </div>
+const STORE = "https://apps.apple.com/us/app/iqonic/id6765689488";
+const features = [
+  { id: "schedule", label: "Protocol tracking", icon: CalendarDays, title: "See what’s next.\nRemember what’s done.", description: "Keep your protocols, timings and cycle lengths together. Open your daily schedule, log an entry and look back at your history whenever you need to.", points: ["Your schedule at a glance", "Daily logging and tracking history", "Custom protocol and cycle settings"], image: "/assets/iqonic-today.jpg", alt: "IQONIC daily schedule and protocol logging screen" },
+  { id: "calculator", label: "Reconstitution calculator", icon: Calculator, title: "Keep the math\nwith your protocol.", description: "Enter your own values to work through concentration and volume calculations. See the breakdown in one place, with a supply estimator alongside it.", points: ["Concentration and volume calculations", "A visual breakdown of your inputs", "Built-in supply estimation"], image: "/assets/calculator-original.png", alt: "IQONIC reconstitution calculator" },
+  { id: "nutrition", label: "Nutrition & hydration", icon: Utensils, title: "Log your food.\nKeep up with your day.", description: "Record meals, calories and protein without opening another tracker. Add water as you go and review your nutrition alongside the rest of your routine.", points: ["Meal logging, barcode lookup and scanning", "Calorie and protein tracking", "Daily water tracking"], image: "/assets/iqonic-nutrition.jpg", alt: "IQONIC nutrition dashboard showing calories and macros" },
+];
+function Logo(){return <span className="wordmark">IQONIC</span>}
+function Download({compact = false}:{compact?:boolean}) { return <a className={compact ? "download compact" : "app-store-badge"} href={STORE} target="_blank" rel="noopener noreferrer" aria-label={compact ? "Get IQONIC on the App Store" : "Download IQONIC on the App Store"}>{compact ? <>Get the app<ArrowUpRight size={17} strokeWidth={1.6}/></> : <img src="/assets/app-store-badge.svg" alt="Download on the App Store" width={168} height={56} />}</a> }
+function AppScreen({src,alt,calculator=false}:{src:string;alt:string;calculator?:boolean}) { return <figure className="device-showcase"><div className="device-body"><img className="device-hand" src="/assets/iqonic-in-hand.png" alt="" width={1024} height={1536} loading="eager"/><div className={`device-display ${calculator ? "device-calculator" : ""}`}><img src={src} alt={alt} width={600} height={1304} loading="eager"/></div></div></figure> }
 
-        <p className="eyebrow mb-5">Operated by IQON Health</p>
 
-        <h1 className="mx-auto max-w-2xl text-4xl leading-[1.1] text-ink md:text-6xl">
-          IQONIC
-        </h1>
-
-        <p className="mx-auto mt-5 max-w-md text-lg leading-relaxed text-sage">
-          Your health companion — simple tools and information, right in your
-          pocket.
-        </p>
-
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a href="#" className="btn-pill hover-lift" aria-label="Download on the App Store">
-            <AppleIcon />
-            App Store
-          </a>
-          <a href="#" className="btn-pill hover-lift" aria-label="Get it on Google Play">
-            <PlayIcon />
-            Google Play
-          </a>
-        </div>
-
-        <p className="mt-8 text-sm text-sage">
-          Coming soon to iOS and Android
-        </p>
-      </div>
-    </section>
-  )
+const scenes = [
+  {label:"Overview", title:"The app for your peptide routine.", description:"Protocols, calculations and daily health tracking. Together.", image:"/assets/iqonic-today.jpg", alt:"IQONIC daily protocol schedule"},
+  {label:"Protocols", title:"Your entire protocol.\nOne clear daily view.", description:"Know what’s next. Keep a record of what’s done.", image:"/assets/iqonic-today.jpg", alt:"IQONIC protocol logging and history"},
+  {label:"Calculations", title:"Keep the calculations\nwith your protocol.", description:"Your inputs, your calculations, all in the same place.", image:"/assets/calculator-original.png", alt:"IQONIC concentration and volume calculator"},
+  {label:"Daily health", title:"Your routine is more\nthan your protocol.", description:"Food, water, activity, sleep and your cycle. Connected.", image:"/assets/iqonic-lifestyle.jpg", alt:"IQONIC lifestyle overview in its original colors"},
+];
+const orbit = [
+  [],
+  [{icon:CalendarDays,title:"A schedule you can check",text:"Your protocols and timings in one daily view."},{icon:Check,title:"Log it as you go",text:"Record what’s done, when it’s done."},{icon:History,title:"A history you can revisit",text:"Keep previous entries close at hand."},{icon:Activity,title:"Your own cycle settings",text:"Organize the routine you already follow."}],
+  [{icon:Calculator,title:"Concentration & volume",text:"A clear breakdown of your own inputs."},{icon:BarChart3,title:"Plan your supply",text:"A supply estimator alongside your calculations."},{icon:Check,title:"The details stay together",text:"Your tools and schedule in the same app."},{icon:CalendarDays,title:"Ready when you need it",text:"Open the calculator from your daily routine."}],
+  [{icon:Utensils,title:"Meals & macros",text:"Calories and protein, with meal and barcode scanning."},{icon:Droplets,title:"Water throughout the day",text:"A simple place to record your intake."},{icon:Heart,title:"Period & symptom tracking",text:"See your cycle and the changes you log."},{icon:Activity,title:"Connected with Apple Health",text:"Steps, calories burned and sleep in view."}],
+];
+function ScrollJourney(){
+ const root=useRef<HTMLElement>(null);const [stage,setStage]=useState(0);
+ useEffect(()=>{let raf=0;const update=()=>{const el=root.current;if(!el)return;const p=Math.max(0,Math.min(1,-el.getBoundingClientRect().top/(el.offsetHeight-window.innerHeight)));el.style.setProperty('--intro',String(1-Math.min(1,p/.18)));setStage(p<.18?0:p<.46?1:p<.74?2:3)};const scroll=()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(update)};update();window.addEventListener('scroll',scroll,{passive:true});window.addEventListener('resize',scroll);return()=>{cancelAnimationFrame(raf);window.removeEventListener('scroll',scroll);window.removeEventListener('resize',scroll)}},[]);
+ function jump(i:number){const el=root.current;if(el)window.scrollTo({top:window.scrollY+el.getBoundingClientRect().top+(el.offsetHeight-window.innerHeight)*[0,.25,.54,.84][i],behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}
+ return <section ref={root} className="journey" id="top" aria-label="Explore IQONIC"><div className={`journey-sticky stage-${stage}`}>
+  {scenes.map((scene,i)=><div key={scene.label} className={`journey-heading ${i===stage?'is-active':''}`} aria-hidden={i!==stage}>{i===0?<h1>{scene.title}</h1>:<h2>{scene.title}</h2>}<p>{scene.description}</p></div>)}
+  {stage===0&&<div className="hero-signature"><span>IQONIC</span><p>BY IQON HEALTH</p><div className="hero-accolade"><strong>#1 peptide app</strong><div className="hero-stars" role="img" aria-label="Five yellow stars">{Array.from({length:5},(_,i)=><Star key={i} size={19} fill="currentColor" strokeWidth={0} aria-hidden="true" />)}</div></div></div>}
+  <div className="journey-phone"><img className="journey-hand" src="/assets/iqonic-in-hand.png" alt="" width={1024} height={1536} fetchPriority="high"/><div className="journey-screen">{scenes.map((scene,i)=><div key={scene.label} className={`journey-screen-layer ${i===2?'calc-layer':''} ${i===stage?'is-active':''}`} aria-hidden={i!==stage}><img src={scene.image} alt={scene.alt} width={600} height={1304} loading="eager"/></div>)}</div></div>
+  {orbit.map((cards,i)=><div className={`orbit-group ${stage===i?'is-active':''}`} key={i} aria-hidden={stage!==i}>{cards.map((card,j)=><article className={`orbit-card orbit-${j}`} key={card.title}><card.icon size={22} strokeWidth={1.5}/><h3>{card.title}</h3><p>{card.text}</p></article>)}</div>)}
+  {stage===0&&<div className="journey-download"><Download/></div>}
+  <nav className="journey-progress" aria-label="App overview slides">{scenes.map((scene,i)=><button key={scene.label} onClick={()=>jump(i)} aria-label={`Show ${scene.label}`} aria-pressed={i===stage}><span/>{i===stage&&<b>{scene.label}</b>}</button>)}</nav>
+  <a className="journey-skip" href="#features">Explore the features <ArrowDown size={14}/></a>
+ </div></section>
 }
+function FeatureGrid(){return <section className="feature-overview" id="features"><div className="overview-heading"><h2>Your protocol is one part.<br/>Keep your whole day in view.</h2><p>Daily tracking that fits together, with the details<br className="desktop-break"/> you need just a tap away.</p></div><div className="feature-grid">
+ <article className="feature-card meal-card"><div className="feature-card-text"><h3>Meals, made easier to log.</h3><p>Scan a meal, look up a barcode or add it yourself. Keep your nutrition in the same place as your routine.</p></div><div className="meal-ui"><div className="ui-topline"><Utensils size={19}/><b>Add a meal</b><Plus size={18}/></div><div className="meal-options"><span><ScanLine size={27}/>Scan a meal</span><span><BarChart3 size={27}/>Scan barcode</span><span><Plus size={27}/>Add manually</span></div></div></article>
+ <article className="feature-card macros-card"><div className="feature-card-text"><h3>The bigger nutrition picture.</h3><p>Calories, protein and macros at a glance.</p></div><div className="nutrition-crop"><img src="/assets/iqonic-nutrition.jpg" alt="IQONIC nutrition and macro tracking screen" width={600} height={1304} loading="eager"/></div></article>
+ <article className="feature-card water-card"><div className="feature-card-text"><h3>Keep up with water.</h3><p>Log it throughout your day.</p></div><div className="mini-panel"><Droplets size={29} strokeWidth={1.3}/><div><b>Water</b><span>Daily hydration</span></div><Plus size={18}/></div></article>
+ <article className="feature-card cycle-card"><div className="feature-card-text"><h3>Your cycle has a place here.</h3><p>Periods, symptoms and cycle history.</p></div><div className="cycle-ui"><div><Heart size={19}/><b>Your cycle journal</b></div><div className="week-row">{'MTWTFSS'.split('').map((d,i)=><span key={i} className={i===2?'selected':''}><small>{d}</small>{14+i}</span>)}</div><p>Period tracking <span>Symptom logging</span></p></div></article>
+ <article className="feature-card health-card"><div className="feature-card-text"><h3>Connected with Apple Health.</h3><p>The everyday metrics that matter.</p></div><div className="health-ui">{['Steps','Calories burned','Sleep'].map(x=><div key={x}><Activity size={18}/><b>{x}</b><Check size={16}/></div>)}</div></article>
+ <article className="feature-card records-card"><div className="feature-card-text"><h3>A record of your routine.</h3><p>Log your entries and look back at your history whenever you need to.</p></div><div className="records-ui"><History size={27}/><strong>From your first entry<br/>to your everyday routine.</strong><span>Schedule · Log · Review</span></div></article>
+ <article className="feature-card math-card"><div className="feature-card-text"><h3>Keep the math in one place.</h3><p>Concentration and volume calculations, plus supply estimation, built into IQONIC.</p></div><div className="calc-ui"><div><label>Amount</label><span>Your value <b>mg</b></span></div><div><label>Volume</label><span>Your value <b>mL</b></span></div><a href="#tools">Explore the calculator <ArrowRight size={18}/></a></div></article>
+ </div><p className="feature-note">Feature illustrations and actual IQONIC screens. Example account shown.</p></section>}
 
-function AppleIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-    </svg>
-  )
-}
-
-function PlayIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M3.61 1.81 13.79 12 3.61 22.19c-.37-.19-.61-.57-.61-1.02V2.83c0-.45.24-.83.61-1.02zM14.85 13.06l2.56 2.56-11.6 6.44 9.04-9zM17.41 8.38l-2.56 2.56-9.04-9 11.6 6.44zM18.78 9.14l2.61 1.45c.81.45.81 1.37 0 1.82l-2.61 1.45L15.91 12l2.87-2.86z" />
-    </svg>
-  )
+export default function Home(){
+  const [active, setActive] = useState("schedule");
+  return <div className="iqonic-landing">
+    <a className="skip-link" href="#main">Skip to content</a>
+    <header className="site-header"><a href="#top" aria-label="IQONIC home"><Logo/></a><nav aria-label="Main navigation"><a href="#features">Features</a><a href="#tools">Calculator</a><a href="#questions">FAQs</a></nav><Download compact/></header>
+    <main id="main">
+      <ScrollJourney/>
+      <FeatureGrid/>
+      <section className="product-section" id="tools">
+        <div className="section-heading"><p className="eyebrow">BUILT FOR THE DETAILS</p><h2>The tools behind<br/>your daily routine.</h2><p>A schedule you can check. A history you can return to.<br className="desktop-break"/> Tools for the details in between.</p></div>
+        <Tabs value={active} onValueChange={setActive} className="product-explorer" orientation="vertical">
+          <div className="explorer-left"><TabsList className="feature-menu" aria-label="Explore app features">{features.map(f=><TabsTrigger key={f.id} value={f.id} className="feature-option"><span className="feature-option-title"><f.icon size={20} strokeWidth={1.4}/>{f.label}</span><Plus size={17}/></TabsTrigger>)}</TabsList>
+          {features.map(f=><TabsContent key={f.id} value={f.id} className="feature-detail"><h3>{f.title}</h3><p>{f.description}</p><ul>{f.points.map(point=><li key={point}><Check size={15}/>{point}</li>)}</ul><a href={STORE} className="inline-link" target="_blank" rel="noopener noreferrer">Explore in the app <ArrowUpRight size={16}/></a></TabsContent>)}
+          </div>
+          <div className="explorer-right" aria-live="polite">{features.map(f=><div key={f.id} className={`screen-panel ${f.id===active ? "is-visible" : ""}`} aria-hidden={f.id!==active}><AppScreen src={f.image} alt={f.alt} calculator={f.id==="calculator"}/></div>)}</div>
+        </Tabs>
+      </section>
+      <section className="everyday-section" id="everyday"><div className="everyday-inner"><div className="everyday-heading"><p className="eyebrow">THE REST OF YOUR ROUTINE, TOO</p><h2>There’s more to your day<br/>than your protocol.</h2><p>Food, water, activity, sleep and your cycle.<br className="desktop-break"/> Keep the things you track connected.</p></div>
+        <div className="everyday-grid"><div className="everyday-visual"><AppScreen src="/assets/iqonic-lifestyle.jpg" alt="IQONIC lifestyle screen with nutrition, water, weight and activity"/></div><div className="everyday-copy"><article><Utensils size={24} strokeWidth={1.3}/><h3>Your daily essentials.</h3><p>Track calories, protein and water. Review your entries alongside your protocol schedule, all in the same app.</p></article><article><Heart size={24} strokeWidth={1.3}/><h3>Your cycle has a place here.</h3><p>Log periods and symptoms, review cycle history and keep a record of the changes you notice.</p></article><article><Activity size={24} strokeWidth={1.3}/><h3>Connected with Apple Health.</h3><p>Bring steps, calories burned and sleep into your daily overview, with the permissions you choose.</p></article></div></div>
+      </div></section>
+      <section className="start-section"><div><p className="eyebrow">MAKE IT PART OF YOUR DAY</p><h2>Set it up.<br/>Take it from there.</h2></div><div className="steps"><article><span>01</span><h3>Add your existing protocols.</h3><p>Enter the schedule and cycle details you want to keep track of.</p></article><article><span>02</span><h3>Log as you go.</h3><p>Record what’s done. Add meals, water and the details that matter to you.</p></article><article><span>03</span><h3>Check back anytime.</h3><p>See your daily overview and review the history you’ve built.</p></article></div></section>
+      <section className="faq-section" id="questions"><div className="faq-heading"><p className="eyebrow">A FEW THINGS TO KNOW</p><h2>Frequently asked questions</h2></div><Accordion type="single" collapsible className="faq-list"><AccordionItem value="what"><AccordionTrigger>What can I track in IQONIC?</AccordionTrigger><AccordionContent>Protocol schedules and logging, nutrition, water, activity, sleep, and menstrual cycles. IQONIC also includes reconstitution calculations and a supply estimator.</AccordionContent></AccordionItem><AccordionItem value="calculator"><AccordionTrigger>How does the calculator work?</AccordionTrigger><AccordionContent>Enter your own values to calculate concentration and volume. The calculator shows the breakdown; it does not choose a dose or determine whether a protocol is appropriate for you.</AccordionContent></AccordionItem><AccordionItem value="health"><AccordionTrigger>Can I connect Apple Health?</AccordionTrigger><AccordionContent>Yes. IQONIC supports Apple Health for steps, calories burned and sleep. You choose which permissions to allow.</AccordionContent></AccordionItem><AccordionItem value="download"><AccordionTrigger>Where can I download the app?</AccordionTrigger><AccordionContent>IQONIC is available on the App Store for iPhone and iPad. <a href={STORE} target="_blank" rel="noopener noreferrer">View the listing</a> for compatibility, current pricing and subscription details.</AccordionContent></AccordionItem><AccordionItem value="medical"><AccordionTrigger>Does IQONIC provide medical advice?</AccordionTrigger><AccordionContent>No. IQONIC is for organization and education. It does not prescribe treatment or determine what is safe for you. Discuss medical decisions with a qualified healthcare professional.</AccordionContent></AccordionItem></Accordion></section>
+      <section className="closing"><Logo/><h2>Your routine.<br/>Ready when you are.</h2><Download/></section>
+    </main>
+    <footer className="site-footer"><div className="footer-main"><span>© {new Date().getFullYear()} IQON Health</span><nav aria-label="Legal and support"><a href="/support">Support</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="mailto:info@iqonhealth.com">Contact</a></nav></div><p>For organization and education. Not medical advice. Screens show an example account; features may vary by app version.</p></footer>
+  </div>;
 }

@@ -1,6 +1,6 @@
 # IQONIC Website
 
-Minimal marketing and compliance site for the IQONIC mobile app, operated by IQON Health. Built to satisfy App Store / Google Play listing requirements.
+Marketing and compliance site for the IQONIC mobile app, operated by IQON Health. Includes the approved IQONIC landing page and the support and legal pages used in the app listing.
 
 ## Pages
 
@@ -31,7 +31,16 @@ npm run preview
 
 Note: this is a single-page app — when deploying, configure your host to rewrite all routes to `index.html` (e.g. Vercel/Netlify SPA fallback) so `/privacy` and `/terms` resolve directly.
 
-## Brand
+## Landing page
 
-- Colors: ink `#12201C`, sage `#5A6B65`, lime `#D4FF9E`, dark `#1E1E1E`, warm off-whites `#FDFBF7` / `#F2F1ED`, hairline borders `rgba(18,32,28,0.08)`
-- Type: Inter (300–600) for text, JetBrains Mono for uppercase eyebrow labels and button text
+- Silver and charcoal presentation with locally hosted Inter from IQON Health.
+- Responsive scroll journey, photographed phone mockups, and real IQONIC screenshots.
+- Protocol, calculator, nutrition, lifestyle, and Apple Health feature sections.
+- Accessible Radix tabs and FAQs; reduced-motion preferences are respected.
+- Official App Store badges link to https://apps.apple.com/us/app/iqonic/id6765689488.
+- Landing styles are scoped to `.iqonic-landing` so support and legal page layouts remain independent.
+- Inter's license is included in `public/fonts/inter-OFL.txt`.
+
+## Deployment
+
+The existing Vercel configuration is retained. Build with `npm run build`; publish `dist`. The SPA rewrite preserves direct access to support, privacy, terms, and their existing aliases.

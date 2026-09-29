@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 
 const titles: Record<string, string> = {
-  '/': 'IQONIC',
+  '/': 'IQONIC — Your peptide routine, organized.',
   '/support': 'Support — IQONIC',
   '/privacy': 'Privacy Policy — IQONIC',
   '/terms': 'Terms of Service — IQONIC',
@@ -15,6 +15,9 @@ export default function Layout() {
     document.title = titles[pathname] ?? 'IQONIC'
     window.scrollTo(0, 0)
   }, [pathname])
+
+  // The landing page has its own header, footer, and scroll presentation.
+  if (pathname === "/") return <Outlet />
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
