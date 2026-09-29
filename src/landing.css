@@ -37,3 +37,6 @@
 
 .iqonic-landing .hero-accolade{margin-top:14px;display:flex;flex-direction:column;align-items:center;gap:7px;white-space:nowrap}.iqonic-landing .hero-accolade strong{font-size:14px;line-height:1.3;font-weight:600;letter-spacing:-.01em;color:#25313a}.iqonic-landing .hero-stars{display:flex;justify-content:center;gap:4px;color:#efb91d}.iqonic-landing .hero-stars svg{flex-shrink:0}.iqonic-landing .stage-0 .journey-phone{margin-top:24px}
 @media(max-width:760px){.iqonic-landing .hero-accolade{margin-top:12px;gap:6px}.iqonic-landing .hero-accolade strong{font-size:13px}.iqonic-landing .hero-stars svg{width:18px;height:18px}}
+
+/* Keep FAQ answers in the HTML while preserving the interactive accordion. */
+.iqonic-landing .faq-list [data-slot="accordion-content"][data-state="closed"]{display:none}

@@ -1,18 +1,10 @@
 import { useEffect } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 
-const titles: Record<string, string> = {
-  '/': 'IQONIC — Your peptide routine, organized.',
-  '/support': 'Support — IQONIC',
-  '/privacy': 'Privacy Policy — IQONIC',
-  '/terms': 'Terms of Service — IQONIC',
-}
-
 export default function Layout() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    document.title = titles[pathname] ?? 'IQONIC'
     window.scrollTo(0, 0)
   }, [pathname])
 

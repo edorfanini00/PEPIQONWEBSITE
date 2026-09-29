@@ -1,4 +1,83 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "buildCommand": "NEXT_PUBLIC_SITE_URL=https://www.iqonicapp.com npm run build",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/privacypolicy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/privacy_policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/legal/privacy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/legal/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/policies/privacy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-use",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/termsofservice",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/terms_of_service",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/tos",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/eula",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/legal/terms",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/legal/terms-of-service",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/policies/terms",
+      "destination": "/terms",
+      "permanent": true
+    }
+  ]
 }
