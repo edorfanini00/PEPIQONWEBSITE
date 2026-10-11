@@ -1,5 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": {
+      "fix/monthly-pricing-copy": false
+    }
+  },
   "buildCommand": "NEXT_PUBLIC_SITE_URL=https://www.iqonicapp.com npm run build",
   "cleanUrls": true,
   "trailingSlash": false,
