@@ -29,6 +29,18 @@ for (const path of [...Object.keys(pageSeo), '/404']) {
       assert(readable.includes(faq.question), `Missing visible FAQ question: ${faq.id}`)
       assert(readable.includes(faq.answer), `Missing HTML answer: ${faq.id}`)
     }
+    const pricing = homeFaqs.find(faq => faq.id === 'pricing')
+    if (meta.canonical) {
+      const schema = JSON.parse(rawSchema)
+      const faqSchema = schema['@graph'].find(node => [node['@type']].flat().includes('FAQPage'))
+      const pricingSchema = faqSchema.mainEntity.find(item => item.name === pricing.question)
+      assert.equal(pricingSchema.acceptedAnswer.text, pricing.answer, 'Visible and structured pricing must match')
+    }
+    assert(pricing.answer.includes('$8.99 USD/month'))
+    assert(pricing.answer.includes('effective October 12, 2026'))
+    assert(pricing.answer.includes('$49.99 USD/year'))
+    assert(pricing.answer.includes('current App Store price shown before subscribing is authoritative'))
+    assert(!html.includes('$12.99'), 'No stale permanent monthly price in rendered HTML or schema')
     assert(readable.includes('Reconstitution calculator'))
     assert(html.includes('https://apps.apple.com/us/app/iqonic/id6765689488'))
     assert(html.includes('Five yellow stars'))
