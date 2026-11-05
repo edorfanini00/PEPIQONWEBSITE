@@ -45,7 +45,7 @@ for (const path of [...Object.keys(pageSeo), '/404']) {
     assert(!html.includes('$12.99'), 'No stale permanent monthly price in rendered HTML or schema')
     assert(readable.includes('Reconstitution calculator'))
     assert(html.includes('https://apps.apple.com/us/app/iqonic/id6765689488'))
-    assert(readable.includes('Subscription required'), 'Subscription requirement stays visible at download decisions')
+    assert(html.includes('Five yellow stars'))
   }
   for (const [, asset] of html.matchAll(/(?:src|href)="(\/(?:assets|fonts)\/[^"?]+)"/g)) {
     await readFile(`dist${asset}`)

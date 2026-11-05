@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "./landing.css";
+@import "./mobile-fixes.css";
+@import "./content-sections.css";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -136,34 +138,5 @@
     to {
       transform: translate(50px, -35px) scale(1.12);
     }
-  }
-}
-
-@font-face {font-family:Inter;src:url("/fonts/inter-latin.woff2") format("woff2");font-style:normal;font-weight:100 900;font-display:swap;}
-
-/* ── Comparison table on small screens ────────────────────────────── */
-@media (max-width: 620px) {
-  .vs-table thead {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-  }
-  .vs-table tr {
-    display: block;
-    padding: 16px 18px;
-    border-top: 1px solid rgba(18, 32, 28, 0.08);
-  }
-  .vs-table tbody tr:first-child { border-top: 0; }
-  .vs-table th,
-  .vs-table td { display: block; padding: 0; }
-  .vs-table th[scope="row"] { font-weight: 600; font-size: 15px; color: #12201c; }
-  .vs-table td { margin-top: 8px; font-size: 14px; line-height: 1.55; }
-  .vs-table td::before {
-    content: attr(data-label) " · ";
-    font-weight: 600;
-    color: #12201c;
   }
 }
