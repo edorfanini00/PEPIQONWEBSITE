@@ -19,7 +19,7 @@ function getStructuredData(pathname: string, canonical: string) {
   const home = `${origin}/`
   const page = pageSeo[pathname]
   const graph: Record<string, unknown>[] = [{
-    '@type': pathname === '/' ? ['WebPage', 'FAQPage'] : pathname === '/support' ? 'ContactPage' : 'WebPage',
+    '@type': pathname === '/' ? ['WebPage', 'FAQPage'] : pathname === '/support' ? 'ContactPage' : pathname === '/about' ? 'AboutPage' : pathname === '/changelog' ? 'CollectionPage' : 'WebPage',
     '@id': `${canonical}#webpage`, url: canonical, name: page.title, description: page.description,
     isPartOf: { '@id': `${home}#website` }, inLanguage: 'en',
     ...(pathname === '/' ? {
@@ -35,7 +35,7 @@ function getStructuredData(pathname: string, canonical: string) {
         '@type': 'MobileApplication', '@id': `${home}#app`, name: 'IQONIC', url: home,
         description: homeFaqs[0].answer, applicationCategory: 'HealthApplication', operatingSystem: 'iOS, iPadOS',
         publisher: { '@id': `${home}#organization` }, downloadUrl: APP_STORE_URL, sameAs: APP_STORE_URL,
-        featureList: ['Peptide research protocol tracking', 'Reconstitution calculations', 'Supply estimation', 'Nutrition and hydration logging', 'Menstrual cycle tracking', 'Apple Health integration'],
+        featureList: ['Peptide research protocol tracking', 'Reconstitution calculations', 'Supply estimation', 'Spending tracker with cost projections', 'Compound library with 25+ research profiles', 'Nutrition and hydration logging', 'Menstrual cycle tracking', 'Apple Health integration'],
         screenshot: ['/assets/iqonic-today.jpg', '/assets/iqonic-nutrition.jpg', '/assets/iqonic-lifestyle.jpg'].map(path => origin + path),
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: APP_STORE_URL, description: 'Free download with optional in-app purchases. See the App Store for current subscription prices.' },
       },

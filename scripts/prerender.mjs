@@ -1,4 +1,5 @@
-import { readFile, writeFile } from 'node:fs/promises'
+import { readFile, writeFile, mkdir } from 'node:fs/promises'
+import { dirname } from 'node:path'
 import { execFileSync } from 'node:child_process'
 import { renderPage, pageSeo, legalAliases } from '../dist-ssr/entry-server.js'
 import { resolveSeoConfig } from './seo-config.mjs'
@@ -11,7 +12,9 @@ for (const pathname of [...Object.keys(pageSeo), '/404']) {
   const { head, body } = renderPage(pathname)
   if (!body.includes('<h1')) throw new Error(`Missing rendered page content: ${pathname}`)
   const html = template.replace('<!--seo-head-->', head).replace('<!--app-html-->', body)
-  await writeFile(pathname === '/' ? 'dist/index.html' : `dist${pathname}.html`, html)
+  const target = pathname === '/' ? 'dist/index.html' : `dist${pathname}.html`
+  await mkdir(dirname(target), { recursive: true })
+  await writeFile(target, html)
 }
 
 // Preserve every existing legal alias as an HTTP permanent redirect, before routing.
@@ -41,4 +44,4 @@ await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<ur
 await writeFile('dist/robots.txt', seo.indexable
   ? `User-agent: *\nAllow: /\n\nSitemap: ${seo.origin}/sitemap.xml\n`
   : 'User-agent: *\nDisallow: /\n')
-console.log(`Prerendered 4 pages and a 404 page. Search indexing: ${seo.indexable ? 'enabled' : 'disabled (preview or unconfigured origin)'}.`)
+console.log(`Prerendered ${Object.keys(pageSeo).length} pages and a 404 page. Search indexing: ${seo.indexable ? 'enabled' : 'disabled (preview or unconfigured origin)'}.`)

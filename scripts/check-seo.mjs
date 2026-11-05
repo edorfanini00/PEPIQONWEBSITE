@@ -56,7 +56,7 @@ assert(!config.rewrites?.some(rule => rule.source.includes('.*')), 'Do not send 
 const robots = await readFile('dist/robots.txt', 'utf8')
 const sitemap = await readFile('dist/sitemap.xml', 'utf8')
 const indexable = getPageSeo('/').robots.startsWith('index,')
-assert.equal((sitemap.match(/<loc>/g) ?? []).length, indexable ? 4 : 0)
+assert.equal((sitemap.match(/<loc>/g) ?? []).length, indexable ? Object.keys(pageSeo).length : 0)
 assert.equal(robots.includes('Allow: /'), indexable)
 assert(!sitemap.includes('/404') && !sitemap.includes('vercel.app'))
 for (const [, date] of sitemap.matchAll(/<lastmod>(.*?)<\/lastmod>/g)) assert(Number.isFinite(Date.parse(date)) && Date.parse(date) <= Date.now())

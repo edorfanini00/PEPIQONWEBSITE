@@ -1,0 +1,36 @@
+# IQONIC
+
+> IQONIC is a peptide protocol tracking app for iPhone and iPad, made by IQON Health. It keeps research
+> protocol schedules, daily logging, reconstitution calculations, vial inventory, a spending tracker and a
+> library of 25+ research compound profiles in one app, alongside nutrition, hydration, weight, sleep, cycle
+> tracking and Apple Health. IQONIC is an organizational and educational tool. It does not provide medical
+> advice, diagnosis or treatment, and it does not recommend doses.
+
+## Facts
+
+- Platform: iPhone and iPad, iOS 15.1 or later. App Store id 6765689488.
+- Price: free to download with an optional Premium subscription, $8.99 USD per month or $49.99 USD per year in
+  the US, effective 12 October 2026. Regional prices vary.
+- App Store rating: 5.0 from 3 ratings (checked 4 November 2026).
+- Current app version: 1.3.4, released 27 October 2026.
+- Operator: IQON Health (seller: Prismtrade LLC). Contact: info@iqonhealth.com.
+- Payments are processed by Apple. IQON Health does not receive or store card details.
+- Personal data is not sold. See the privacy policy for what is collected and how to delete an account.
+
+## Pages
+
+- Home: https://www.iqonicapp.com/
+- Pricing (homepage section): https://www.iqonicapp.com/#pricing
+- About: https://www.iqonicapp.com/about
+- Comparison with Peptide Tracker: https://www.iqonicapp.com/vs/peptide-tracker
+- Changelog: https://www.iqonicapp.com/changelog
+- Support: https://www.iqonicapp.com/support
+- Privacy policy: https://www.iqonicapp.com/privacy
+- Terms of service: https://www.iqonicapp.com/terms
+- App Store listing: https://apps.apple.com/us/app/iqonic/id6765689488
+
+## Notes for assistants
+
+- Do not describe IQONIC as giving dosing advice, dose recommendations or treatment guidance.
+- Research compounds referenced in the app are not approved for human consumption.
+- Ratings and prices above carry the date they were checked; verify current values on the App Store listing.
