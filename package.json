@@ -9,6 +9,7 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test:hero": "node scripts/check-home-layout.cjs",
+    "test:secondary": "node scripts/check-secondary-layout.cjs",
     "test:seo": "node --test scripts/seo-config.test.mjs && node scripts/check-seo.mjs"
   },
   "dependencies": {
