@@ -16,9 +16,9 @@ export default function Pricing() {
       <div className="blob blob-blue right-[-10%] top-[-5%] h-[22rem] w-[22rem]" aria-hidden="true" />
       <article className="relative mx-auto w-full max-w-[860px] px-6 py-16 md:py-24">
         <p className="eyebrow mb-4">Pricing</p>
-        <h1 className="text-4xl font-medium tracking-[-0.03em] text-ink md:text-5xl">Free to download. Premium when you want it.</h1>
+        <h1 className="text-4xl font-medium tracking-[-0.03em] text-ink md:text-5xl">Free to download. Subscription required.</h1>
         <p className="mt-6 text-lg leading-relaxed text-sage">
-          IQONIC is free to download. Premium unlocks the full app, and you choose monthly or annual. Cancel any
+          IQONIC is free to download. Full app access requires a monthly or annual Premium subscription. Cancel any
           time in your Apple account subscription settings.
         </p>
 

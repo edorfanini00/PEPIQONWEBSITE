@@ -9,9 +9,8 @@
 ## Facts
 
 - Platform: iPhone and iPad, iOS 15.1 or later. App Store id 6765689488.
-- Price: free to download with an optional Premium subscription, $8.99 USD per month or $49.99 USD per year in
+- Price: free to download; a Premium subscription is required for full app access (no free tier), $8.99 USD per month or $49.99 USD per year in
   the US, effective 12 October 2026. Regional prices vary.
-- App Store rating: 5.0 from 3 ratings (checked 4 November 2026).
 - Current app version: 1.3.4, released 27 October 2026.
 - Operator: IQON Health (seller: Prismtrade LLC). Contact: info@iqonhealth.com.
 - Payments are processed by Apple. IQON Health does not receive or store card details.
@@ -33,4 +32,4 @@
 
 - Do not describe IQONIC as giving dosing advice, dose recommendations or treatment guidance.
 - Research compounds referenced in the app are not approved for human consumption.
-- Ratings and prices above carry the date they were checked; verify current values on the App Store listing.
+- Prices above carry their effective date; verify current prices and ratings on the App Store listing.

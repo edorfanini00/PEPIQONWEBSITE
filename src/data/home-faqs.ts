@@ -1,7 +1,7 @@
 import { APP_STORE_URL } from './site'
 
 // Monthly US price scheduled in App Store Connect for October 12, 2026.
-// Recheck prices before changing these answers. Do not infer ratings from the hero stars.
+// Recheck prices before changing these answers.
 export const homeFaqs = [
   {
     id: 'what',
@@ -27,7 +27,7 @@ export const homeFaqs = [
   {
     id: 'pricing',
     question: 'How much does IQONIC cost?',
-    answer: 'IQONIC is free to download with in-app purchases. Premium Monthly is $8.99 USD/month in the US, effective October 12, 2026. Premium Annual is $49.99 USD/year in the US, which works out at about $4.17 a month and saves $57.89 against twelve monthly payments. Prices vary by region and may change; the current App Store price shown before subscribing is authoritative.',
+    answer: 'IQONIC is free to download and requires a subscription for full app access. There is no free tier. Premium Monthly is $8.99 USD/month in the US, effective October 12, 2026. Premium Annual is $49.99 USD/year in the US, which works out at about $4.17 a month and saves $57.89 against twelve monthly payments. Prices vary by region and may change; the current App Store price shown before subscribing is authoritative.',
     link: { href: APP_STORE_URL, text: 'Check current App Store pricing' },
   },
   {

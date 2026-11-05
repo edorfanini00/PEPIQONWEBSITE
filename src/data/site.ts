@@ -28,7 +28,7 @@ export const pageSeo: Record<string, { title: string; description: string; label
   },
   '/pricing': {
     title: 'IQONIC Pricing | $8.99 Monthly or $49.99 Annual Premium',
-    description: 'IQONIC is free to download. Premium is $8.99 USD per month or $49.99 USD per year in the US, with the annual plan saving $57.89 against twelve monthly payments.',
+    description: 'IQONIC is free to download. Full app access requires Premium: $8.99 USD per month or $49.99 USD per year in the US. Prices vary by region.',
     label: 'Pricing',
     source: 'src/pages/Pricing.tsx',
   },

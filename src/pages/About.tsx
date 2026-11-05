@@ -14,6 +14,17 @@ export default function About() {
           matter most, the schedule, the math and the spend, are the parts that get scattered first.
         </p>
 
+        <section aria-labelledby="founder-name" className="mt-12 border-y border-hairline py-8">
+          <p className="eyebrow mb-4">Behind IQONIC</p>
+          <h2 id="founder-name" className="text-3xl font-medium tracking-[-0.02em] text-ink">Edoardo Orfanini</h2>
+          <p className="mt-2 text-sm text-sage">Founder and CEO</p>
+          <p className="mt-5 text-base leading-relaxed text-sage">
+            Edoardo built and shipped IQONIC to bring the daily work of a health routine into one place.
+            The app connects protocol scheduling and vial inventory with nutrition and health logs,
+            so those records can sit together instead of being scattered across apps and notes.
+          </p>
+        </section>
+
         <h2 className="mt-14 text-2xl font-medium tracking-[-0.02em] text-ink">What the app does</h2>
         <p className="mt-4 text-base leading-relaxed text-sage">
           You enter the protocol you have already decided on. IQONIC keeps the schedule, the log, the

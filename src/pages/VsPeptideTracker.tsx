@@ -10,13 +10,12 @@ const ROWS = [
   { feature: 'Spending tracker', iqonic: 'Vial purchases, monthly spend and projections', rival: 'Not listed in the App Store description' },
   { feature: 'Compound library', iqonic: '25+ research profiles with pharmacokinetics and timing', rival: 'Not listed in the App Store description' },
   { feature: 'Apple Health', iqonic: 'Steps, calories burned and sleep', rival: 'Yes' },
-  { feature: 'App Store rating', iqonic: '5.0 from 3 ratings', rival: '4.9 from 2,906 ratings' },
 ]
 
 const FAQS = [
   { q: 'Does Peptide Tracker still calculate doses?', a: 'Peptide Tracker 3.1.0, released on 30 October 2026, states in its own release notes that it "no longer calculates doses or draws". Anyone who wants the math inside the app has to bring it from somewhere else.' },
-  { q: 'Is IQONIC a replacement for Peptide Tracker?', a: 'They overlap on protocol tracking. IQONIC keeps the reconstitution calculation, the spending record and the compound library in the same app, which is the difference this page is about. Peptide Tracker carries a much larger review base, and it is free to use.' },
-  { q: 'Which one should I choose?', a: 'If the calculation is the part you keep redoing by hand, IQONIC does it for you. If you only need a log and a reminder, either works. IQONIC is free to download, with an optional Premium subscription.' },
+  { q: 'Is IQONIC a replacement for Peptide Tracker?', a: 'They overlap on protocol tracking. IQONIC keeps the reconstitution calculation, the spending record and the compound library in the same app, which is the difference this page is about. Check each App Store listing for current access terms.' },
+  { q: 'Which one should I choose?', a: 'If the calculation is the part you keep redoing by hand, IQONIC does it for you. IQONIC is free to download and requires a subscription for full app access. Compare the features you need and the current App Store subscription terms before choosing.' },
   { q: 'Is IQONIC medical advice?', a: 'No. IQONIC is an organizational and educational tool. It does not recommend doses and is not a substitute for medical advice.' },
 ]
 

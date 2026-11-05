@@ -37,7 +37,7 @@ function getStructuredData(pathname: string, canonical: string) {
         publisher: { '@id': `${home}#organization` }, downloadUrl: APP_STORE_URL, sameAs: APP_STORE_URL,
         featureList: ['Peptide research protocol tracking', 'Reconstitution calculations', 'Supply estimation', 'Spending tracker with cost projections', 'Compound library with 25+ research profiles', 'Nutrition and hydration logging', 'Menstrual cycle tracking', 'Apple Health integration'],
         screenshot: ['/assets/iqonic-today.jpg', '/assets/iqonic-nutrition.jpg', '/assets/iqonic-lifestyle.jpg'].map(path => origin + path),
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: APP_STORE_URL, description: 'Free download with optional in-app purchases. See the App Store for current subscription prices.' },
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: APP_STORE_URL, description: 'Free to download. Subscription required for full app access; no free tier. See the App Store for current subscription prices.' },
       },
     )
   } else {
