@@ -66,7 +66,11 @@
     height: 100%;
     width: auto;
     aspect-ratio: 2 / 3;
-    max-width: min(72vw, 320px);
+    --phone-width-limit: min(72vw, 320px);
+    max-width: var(--phone-width-limit);
+    /* The overlay percentages must resolve against the 2:3 frame image,
+       even when the width cap is reached before the available height. */
+    max-height: calc(var(--phone-width-limit) * 3 / 2);
     transition: none;
   }
 
@@ -244,7 +248,7 @@
   .iqonic-landing .journey-heading h1,
   .iqonic-landing .journey-heading h2 { font-size: 28px; }
   .iqonic-landing .journey-phone,
-  .iqonic-landing .stage-0 .journey-phone { max-width: 76vw; }
+  .iqonic-landing .stage-0 .journey-phone { --phone-width-limit: 76vw; }
   .iqonic-landing .overview-heading h2,
   .iqonic-landing .product-section .section-heading h2,
   .iqonic-landing .everyday-heading h2,

@@ -261,7 +261,7 @@
   .iqonic-landing .hero-accolade { margin: 0; }
   .iqonic-landing .journey-stage { order: 3; display: flex; align-items: center; justify-content: center; flex: 1 1 auto; min-height: 0; width: 100%; margin-top: 12px; }
   .iqonic-landing .journey-phone,
-  .iqonic-landing .stage-0 .journey-phone { position: relative; inset: auto; transform: none; margin: 0 auto; height: 100%; width: auto; aspect-ratio: 2/3; max-width: min(60vw, 380px); transition: none; }
+  .iqonic-landing .stage-0 .journey-phone { position: relative; inset: auto; transform: none; margin: 0 auto; height: 100%; width: auto; aspect-ratio: 2/3; --phone-width-limit: min(60vw, 380px); max-width: var(--phone-width-limit); max-height: calc(var(--phone-width-limit) * 3 / 2); transition: none; }
   .iqonic-landing .journey-download { position: static; inset: auto; transform: none; order: 4; margin: 16px auto 0; padding-bottom: 72px; }
   .iqonic-landing .journey-progress { left: 28px; bottom: 0; height: 72px; }
   .iqonic-landing .journey-skip { right: 28px; bottom: 0; height: 72px; display: flex; align-items: center; }
