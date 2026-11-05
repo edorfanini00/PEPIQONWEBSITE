@@ -2,7 +2,8 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "git": {
     "deploymentEnabled": {
-      "fix/monthly-pricing-copy": false
+      "fix/monthly-pricing-copy": false,
+      "fix/iqonic-seo-finish": false
     }
   },
   "buildCommand": "NEXT_PUBLIC_SITE_URL=https://www.iqonicapp.com npm run build",

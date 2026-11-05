@@ -1,12 +1,12 @@
 import { APP_STORE_URL } from './site'
 
 // Monthly US price scheduled in App Store Connect for October 12, 2026.
-// Recheck prices before changing these answers. Do not infer ratings from the hero stars.
+// Recheck prices before changing these answers.
 export const homeFaqs = [
   {
     id: 'what',
     question: 'What is IQONIC?',
-    answer: 'IQONIC is a peptide protocol tracking app by IQON Health. It brings research protocol schedules, logging, reconstitution calculations, nutrition, hydration, activity, sleep, and menstrual cycle tracking into one place. It is an organizational and educational tool, not a source of medical advice.',
+    answer: 'IQONIC is a peptide protocol tracking app by IQON Health. It brings research protocol schedules, logging, reconstitution calculations, a spending tracker, a compound library for 25+ research compounds, nutrition, hydration, activity, sleep, and menstrual cycle tracking into one place. It is an organizational and educational tool, not a source of medical advice.',
   },
   {
     id: 'calculator',
@@ -27,7 +27,7 @@ export const homeFaqs = [
   {
     id: 'pricing',
     question: 'How much does IQONIC cost?',
-    answer: 'IQONIC is free to download with in-app purchases. Premium Monthly is scheduled to be $8.99 USD/month in the US effective October 12, 2026. Premium Annual remains $49.99 USD/year in the US. Prices vary by region and may change; the current App Store price shown before subscribing is authoritative.',
+    answer: 'IQONIC is free to download and requires a subscription for full app access. There is no free tier. Premium Monthly is $8.99 USD/month in the US, effective October 12, 2026. Premium Annual is $49.99 USD/year in the US, which works out at about $4.17 a month and saves $57.89 against twelve monthly payments. Prices vary by region and may change; the current App Store price shown before subscribing is authoritative.',
     link: { href: APP_STORE_URL, text: 'Check current App Store pricing' },
   },
   {
@@ -35,6 +35,12 @@ export const homeFaqs = [
     question: 'How do I cancel IQONIC Premium?',
     answer: 'Manage or cancel IQONIC Premium in your Apple account subscription settings. Subscriptions renew automatically unless canceled at least 24 hours before the current period ends.',
     link: { href: '/terms', text: 'Read the subscription terms' },
+  },
+  {
+    id: 'data',
+    question: 'Where do my protocol entries go?',
+    answer: 'Your protocol entries stay yours. They are stored in your IQONIC account, we do not sell your personal information, and Apple processes your payment so we never receive or store your card details. The Privacy Policy explains what is collected, why, and how to delete your account.',
+    link: { href: '/privacy', text: 'Read the Privacy Policy' },
   },
   {
     id: 'medical',

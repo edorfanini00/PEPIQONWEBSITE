@@ -6,6 +6,7 @@ const decode = text => text.replaceAll('&amp;', '&').replaceAll('&quot;', '"').r
 const titles = new Set()
 for (const path of [...Object.keys(pageSeo), '/404']) {
   const html = await readFile(path === '/' ? 'dist/index.html' : `dist${path}.html`, 'utf8')
+  assert(!/Start free|Premium when you want it|optional Premium|optional in-app purchases|either works|5\.0 stars|3 ratings|three ratings/i.test(html), `${path}: no stale access or rating claims`)
   const head = html.split('</head>')[0]
   const meta = getPageSeo(path)
   assert.equal((html.match(/<h1(?:\s|>)/g) ?? []).length, 1, `${path}: exactly one H1`)
@@ -36,6 +37,7 @@ for (const path of [...Object.keys(pageSeo), '/404']) {
       const pricingSchema = faqSchema.mainEntity.find(item => item.name === pricing.question)
       assert.equal(pricingSchema.acceptedAnswer.text, pricing.answer, 'Visible and structured pricing must match')
     }
+    assert(pricing.answer.includes('requires a subscription for full app access'))
     assert(pricing.answer.includes('$8.99 USD/month'))
     assert(pricing.answer.includes('effective October 12, 2026'))
     assert(pricing.answer.includes('$49.99 USD/year'))
@@ -56,8 +58,18 @@ assert(!config.rewrites?.some(rule => rule.source.includes('.*')), 'Do not send 
 const robots = await readFile('dist/robots.txt', 'utf8')
 const sitemap = await readFile('dist/sitemap.xml', 'utf8')
 const indexable = getPageSeo('/').robots.startsWith('index,')
-assert.equal((sitemap.match(/<loc>/g) ?? []).length, indexable ? 4 : 0)
+assert.equal((sitemap.match(/<loc>/g) ?? []).length, indexable ? Object.keys(pageSeo).length : 0)
 assert.equal(robots.includes('Allow: /'), indexable)
 assert(!sitemap.includes('/404') && !sitemap.includes('vercel.app'))
 for (const [, date] of sitemap.matchAll(/<lastmod>(.*?)<\/lastmod>/g)) assert(Number.isFinite(Date.parse(date)) && Date.parse(date) <= Date.now())
+
+
+const verificationFile = 'google2ea090625eca6bec.html'
+assert.equal(await readFile(`dist/${verificationFile}`, 'utf8'), `google-site-verification: ${verificationFile}`, 'Verification must be a real static file, not app HTML')
+const llms = await readFile('dist/llms.txt', 'utf8')
+assert(llms.includes('required for full app access (no free tier)'))
+assert(!/optional Premium|App Store rating:/.test(llms))
+const about = await readFile('dist/about.html', 'utf8')
+assert(about.includes('Edoardo Orfanini') && about.includes('Founder and CEO'))
+
 console.log('SEO checks passed: raw HTML, single H1s, metadata, canonicals, schema/FAQ parity, assets, aliases, 404 configuration, robots and sitemap.')

@@ -1,4 +1,4 @@
-type Placement = 'header' | 'hero' | 'feature' | 'faq' | 'closing'
+type Placement = 'header' | 'hero' | 'feature' | 'faq' | 'closing' | 'pricing'
 
 // A named, non-identifying conversion event for an existing/consented GTM setup.
 // This does not install analytics or transmit data on its own.

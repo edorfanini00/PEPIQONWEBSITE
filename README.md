@@ -69,3 +69,15 @@ App Store links emit the named `iqonic_app_store_click` event to an existing `wi
 No analytics provider or tracking ID has been installed. Connect a consent-aware analytics container and configure that event as a conversion before claiming recorded downloads. These events measure outbound clicks, not completed App Store installs or purchases.
 
 See `docs/seo-change-log.md` for the baseline, sources, remaining measurement work, and release gate.
+
+## Hero geometry regression
+
+After building, serve `dist` with `npm run preview -- --host 127.0.0.1 --port 4178 --strictPort`, then run:
+
+```bash
+PLAYWRIGHT_MODULE=/absolute/path/to/existing/playwright \
+CHROME_PATH='/absolute/path/to/installed/Chrome' \
+npm run test:hero
+```
+
+This uses an existing Playwright installation and browser without downloading either. `PLAYWRIGHT_MODULE` can be omitted when Playwright is resolvable locally. Set `PREVIEW_URL` to use another preview port and `HERO_EVIDENCE_DIR` to save screenshots and measured geometry outside the repository. The test exercises all four hero slides at phone, short-phone, tablet and desktop sizes with normal and reduced motion. It checks the screen aperture against the actual frame image, plus image loading, text separation and mobile CTA clearance; a width-capped wrapper that grows taller than its frame fails the test.

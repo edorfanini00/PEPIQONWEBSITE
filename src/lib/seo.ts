@@ -19,7 +19,7 @@ function getStructuredData(pathname: string, canonical: string) {
   const home = `${origin}/`
   const page = pageSeo[pathname]
   const graph: Record<string, unknown>[] = [{
-    '@type': pathname === '/' ? ['WebPage', 'FAQPage'] : pathname === '/support' ? 'ContactPage' : 'WebPage',
+    '@type': pathname === '/' ? ['WebPage', 'FAQPage'] : pathname === '/support' ? 'ContactPage' : pathname === '/about' ? 'AboutPage' : pathname === '/changelog' ? 'CollectionPage' : 'WebPage',
     '@id': `${canonical}#webpage`, url: canonical, name: page.title, description: page.description,
     isPartOf: { '@id': `${home}#website` }, inLanguage: 'en',
     ...(pathname === '/' ? {
@@ -35,9 +35,9 @@ function getStructuredData(pathname: string, canonical: string) {
         '@type': 'MobileApplication', '@id': `${home}#app`, name: 'IQONIC', url: home,
         description: homeFaqs[0].answer, applicationCategory: 'HealthApplication', operatingSystem: 'iOS, iPadOS',
         publisher: { '@id': `${home}#organization` }, downloadUrl: APP_STORE_URL, sameAs: APP_STORE_URL,
-        featureList: ['Peptide research protocol tracking', 'Reconstitution calculations', 'Supply estimation', 'Nutrition and hydration logging', 'Menstrual cycle tracking', 'Apple Health integration'],
+        featureList: ['Peptide research protocol tracking', 'Reconstitution calculations', 'Supply estimation', 'Spending tracker with cost projections', 'Compound library with 25+ research profiles', 'Nutrition and hydration logging', 'Menstrual cycle tracking', 'Apple Health integration'],
         screenshot: ['/assets/iqonic-today.jpg', '/assets/iqonic-nutrition.jpg', '/assets/iqonic-lifestyle.jpg'].map(path => origin + path),
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: APP_STORE_URL, description: 'Free download with optional in-app purchases. See the App Store for current subscription prices.' },
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', url: APP_STORE_URL, description: 'Free to download. Subscription required for full app access; no free tier. See the App Store for current subscription prices.' },
       },
     )
   } else {
@@ -67,9 +67,14 @@ export function renderSeoHead(pathname: string) {
     `<meta property="og:title" content="${escape(meta.title)}">`,
     `<meta property="og:description" content="${escape(meta.description)}">`,
     meta.canonical ? `<meta property="og:url" content="${meta.canonical}">` : '',
-    `<meta name="twitter:card" content="summary">`,
+    meta.canonical ? `<meta property="og:image" content="${new URL('/og.png', meta.canonical).href}">` : '',
+    meta.canonical ? `<meta property="og:image:width" content="1200">` : '',
+    meta.canonical ? `<meta property="og:image:height" content="630">` : '',
+    meta.canonical ? `<meta property="og:image:alt" content="IQONIC peptide protocol tracking app">` : '',
+    `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="twitter:title" content="${escape(meta.title)}">`,
     `<meta name="twitter:description" content="${escape(meta.description)}">`,
+    meta.canonical ? `<meta name="twitter:image" content="${new URL('/og.png', meta.canonical).href}">` : '',
     meta.structuredData ? `<script id="iqonic-structured-data" type="application/ld+json">${safeJson(meta.structuredData)}</script>` : '',
   ].filter(Boolean).join('\n    ')
 }

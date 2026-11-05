@@ -26,6 +26,30 @@ export const pageSeo: Record<string, { title: string; description: string; label
     label: 'IQONIC',
     source: 'src/pages/Home.tsx',
   },
+  '/pricing': {
+    title: 'IQONIC Pricing | $8.99 Monthly or $49.99 Annual Premium',
+    description: 'IQONIC is free to download. Full app access requires Premium: $8.99 USD per month or $49.99 USD per year in the US. Prices vary by region.',
+    label: 'Pricing',
+    source: 'src/pages/Pricing.tsx',
+  },
+  '/about': {
+    title: 'About IQONIC | Peptide Tracking App by IQON Health',
+    description: 'Why IQONIC exists, who it is for, who it is not for, and how IQON Health handles protocol data, payments and privacy.',
+    label: 'About',
+    source: 'src/pages/About.tsx',
+  },
+  '/vs/peptide-tracker': {
+    title: 'IQONIC vs Peptide Tracker | Reconstitution Calculator Comparison',
+    description: 'A dated, factual comparison of IQONIC and Peptide Tracker Log & Reminder: protocol tracking, reconstitution calculation, spending visibility and compound library.',
+    label: 'IQONIC vs Peptide Tracker',
+    source: 'src/pages/VsPeptideTracker.tsx',
+  },
+  '/changelog': {
+    title: 'IQONIC Changelog | Dated App Store Release Notes',
+    description: 'Dated release notes for IQONIC on the App Store, starting with the current version and its calculator improvements.',
+    label: 'Changelog',
+    source: 'src/pages/Changelog.tsx',
+  },
   '/support': {
     title: 'IQONIC App Support | Account, Password & Contact Help',
     description: 'Get help with your IQONIC account, password reset, notifications and account deletion. Contact IQON Health support at info@iqonhealth.com.',

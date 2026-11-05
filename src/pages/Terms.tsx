@@ -32,7 +32,7 @@ export default function Terms() {
 
       <Section title="Subscriptions and payments">
         <p className="mb-3">
-          Certain features are available only with IQON Premium, an
+          IQONIC is free to download. Full app access requires IQON Premium, an
           auto-renewable subscription sold through the Apple App Store. The
           following terms apply:
         </p>

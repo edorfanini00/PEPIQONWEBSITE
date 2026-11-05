@@ -21,7 +21,7 @@ export default function Layout() {
               IQONIC
             </span>
           </Link>
-          <nav className="flex items-center gap-6">
+          <nav className="hidden items-center gap-6 sm:flex">
             <Link
               to="/support"
               className="text-sm text-sage transition-colors duration-300 hover:text-ink"
@@ -37,7 +37,7 @@ export default function Layout() {
       </main>
 
       <footer className="border-t border-hairline bg-cream">
-        <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-4 px-6 py-8 text-sm text-sage md:flex-row md:items-center md:justify-between">
+        <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-4 px-5 py-8 text-sm text-sage md:flex-row md:items-center md:justify-between">
           <p>
             IQONIC is operated by IQON Health ·{' '}
             <a
@@ -47,7 +47,16 @@ export default function Layout() {
               info@iqonhealth.com
             </a>
           </p>
-          <nav className="flex gap-6">
+          <nav className="flex flex-wrap gap-x-5 gap-y-2">
+            <Link to="/pricing" className="transition-colors duration-300 hover:text-ink">
+              Pricing
+            </Link>
+            <Link to="/about" className="transition-colors duration-300 hover:text-ink">
+              About
+            </Link>
+            <Link to="/changelog" className="transition-colors duration-300 hover:text-ink">
+              Changelog
+            </Link>
             <Link to="/support" className="transition-colors duration-300 hover:text-ink">
               Support
             </Link>
