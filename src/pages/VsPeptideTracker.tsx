@@ -34,7 +34,7 @@ export default function VsPeptideTracker() {
         </p>
 
         <div className="mt-12 overflow-hidden rounded-2xl border border-hairline">
-          <table className="w-full border-collapse text-left text-sm">
+          <table className="vs-table w-full border-collapse text-left text-sm">
             <thead>
               <tr className="bg-cream text-ink">
                 <th scope="col" className="px-4 py-4 font-medium">Feature</th>
@@ -46,8 +46,8 @@ export default function VsPeptideTracker() {
               {ROWS.map(row => (
                 <tr key={row.feature} className="border-t border-hairline align-top">
                   <th scope="row" className="px-4 py-4 font-normal text-ink">{row.feature}</th>
-                  <td className="px-4 py-4 text-sage">{row.iqonic}</td>
-                  <td className="px-4 py-4 text-sage">{row.rival}</td>
+                  <td data-label="IQONIC" className="px-4 py-4 text-sage">{row.iqonic}</td>
+                  <td data-label="Peptide Tracker 3.1.0" className="px-4 py-4 text-sage">{row.rival}</td>
                 </tr>
               ))}
             </tbody>

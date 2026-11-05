@@ -273,3 +273,33 @@
   .iqonic-landing .everyday-visual .device-showcase { width: min(100%, 440px); }
   .iqonic-landing .feature-card { padding: 24px; }
 }
+
+
+/* ── Comparison table on small screens ────────────────────────────── */
+@media (max-width: 620px) {
+  .vs-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .vs-table tr {
+    display: block;
+    padding: 16px 18px;
+    border-top: 1px solid rgba(18, 32, 28, 0.08);
+  }
+  .vs-table tbody tr:first-child { border-top: 0; }
+  .vs-table th,
+  .vs-table td { display: block; padding: 0; }
+  .vs-table th[scope="row"] { font-weight: 600; font-size: 15px; color: #12201c; }
+  .vs-table td { margin-top: 8px; font-size: 14px; line-height: 1.55; }
+  .vs-table td::before {
+    content: attr(data-label) " · ";
+    font-weight: 600;
+    color: #12201c;
+  }
+}
+
+.iqonic-landing .closing-proof { margin-top: 14px; font-size: 12px; color: #b6bcc4; letter-spacing: 0; }
