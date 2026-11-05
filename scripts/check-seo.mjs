@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises'
+import { readFile, readdir } from 'node:fs/promises'
 import assert from 'node:assert/strict'
 import { pageSeo, homeFaqs, getPageSeo } from '../dist-ssr/entry-server.js'
 
@@ -70,6 +70,20 @@ const llms = await readFile('dist/llms.txt', 'utf8')
 assert(llms.includes('required for full app access (no free tier)'))
 assert(!/optional Premium|App Store rating:/.test(llms))
 const about = await readFile('dist/about.html', 'utf8')
-assert(about.includes('Edoardo Orfanini') && about.includes('Founder and CEO'))
+assert(about.includes('About IQONIC') && about.includes('What the app does'))
+assert(about.includes('IQON Health') && about.includes('info@iqonhealth.com'))
 
-console.log('SEO checks passed: raw HTML, single H1s, metadata, canonicals, schema/FAQ parity, assets, aliases, 404 configuration, robots and sitemap.')
+async function checkPublicContent(directory) {
+  for (const entry of await readdir(directory, { withFileTypes: true })) {
+    const path = `${directory}/${entry.name}`
+    if (entry.isDirectory()) {
+      await checkPublicContent(path)
+    } else if (/\.(?:html|js|mjs|json|txt|xml|svg|css|map)$/i.test(entry.name)) {
+      const content = await readFile(path, 'utf8')
+      assert(!/\b(?:Edoardo|Orfanini|founder|CEO)\b|Behind IQONIC/i.test(decode(content)), `${path}: no personal founder information in public content`)
+    }
+  }
+}
+await checkPublicContent('dist')
+
+console.log('SEO checks passed: raw HTML, single H1s, metadata, canonicals, schema/FAQ parity, assets, aliases, 404 configuration, robots, sitemap and absence of personal founder information.')
