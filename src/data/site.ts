@@ -26,6 +26,12 @@ export const pageSeo: Record<string, { title: string; description: string; label
     label: 'IQONIC',
     source: 'src/pages/Home.tsx',
   },
+  '/pricing': {
+    title: 'IQONIC Pricing | $8.99 Monthly or $49.99 Annual Premium',
+    description: 'IQONIC is free to download. Premium is $8.99 USD per month or $49.99 USD per year in the US, with the annual plan saving $57.89 against twelve monthly payments.',
+    label: 'Pricing',
+    source: 'src/pages/Pricing.tsx',
+  },
   '/about': {
     title: 'About IQONIC | Peptide Tracking App by IQON Health',
     description: 'Why IQONIC exists, who it is for, who it is not for, and how IQON Health handles protocol data, payments and privacy.',

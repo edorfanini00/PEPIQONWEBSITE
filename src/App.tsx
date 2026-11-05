@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
+import Pricing from './pages/Pricing'
 import Changelog from './pages/Changelog'
 import VsPeptideTracker from './pages/VsPeptideTracker'
 import Support from './pages/Support'
@@ -17,6 +18,7 @@ export function AppRoutes() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/about" element={<About />} />
         <Route path="/changelog" element={<Changelog />} />
         <Route path="/vs/peptide-tracker" element={<VsPeptideTracker />} />

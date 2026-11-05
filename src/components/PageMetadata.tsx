@@ -20,7 +20,13 @@ export default function PageMetadata() {
     setMeta('og:locale', 'en_US', 'property')
     setMeta('og:title', meta.title, 'property')
     setMeta('og:description', meta.description, 'property')
-    setMeta('twitter:card', 'summary')
+    setMeta('twitter:card', 'summary_large_image')
+    if (meta.canonical) {
+      setMeta('og:image', new URL('/og.png', meta.canonical).href, 'property')
+      setMeta('og:image:width', '1200', 'property')
+      setMeta('og:image:height', '630', 'property')
+      setMeta('twitter:image', new URL('/og.png', meta.canonical).href)
+    }
     setMeta('twitter:title', meta.title)
     setMeta('twitter:description', meta.description)
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')

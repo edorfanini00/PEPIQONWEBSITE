@@ -67,9 +67,14 @@ export function renderSeoHead(pathname: string) {
     `<meta property="og:title" content="${escape(meta.title)}">`,
     `<meta property="og:description" content="${escape(meta.description)}">`,
     meta.canonical ? `<meta property="og:url" content="${meta.canonical}">` : '',
-    `<meta name="twitter:card" content="summary">`,
+    meta.canonical ? `<meta property="og:image" content="${new URL('/og.png', meta.canonical).href}">` : '',
+    meta.canonical ? `<meta property="og:image:width" content="1200">` : '',
+    meta.canonical ? `<meta property="og:image:height" content="630">` : '',
+    meta.canonical ? `<meta property="og:image:alt" content="IQONIC peptide protocol tracking app">` : '',
+    `<meta name="twitter:card" content="summary_large_image">`,
     `<meta name="twitter:title" content="${escape(meta.title)}">`,
     `<meta name="twitter:description" content="${escape(meta.description)}">`,
+    meta.canonical ? `<meta name="twitter:image" content="${new URL('/og.png', meta.canonical).href}">` : '',
     meta.structuredData ? `<script id="iqonic-structured-data" type="application/ld+json">${safeJson(meta.structuredData)}</script>` : '',
   ].filter(Boolean).join('\n    ')
 }

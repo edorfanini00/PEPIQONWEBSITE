@@ -48,6 +48,15 @@ export default function Layout() {
             </a>
           </p>
           <nav className="flex gap-6">
+            <Link to="/pricing" className="transition-colors duration-300 hover:text-ink">
+              Pricing
+            </Link>
+            <Link to="/about" className="transition-colors duration-300 hover:text-ink">
+              About
+            </Link>
+            <Link to="/changelog" className="transition-colors duration-300 hover:text-ink">
+              Changelog
+            </Link>
             <Link to="/support" className="transition-colors duration-300 hover:text-ink">
               Support
             </Link>
